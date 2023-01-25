@@ -1,8 +1,9 @@
+import { Header } from "@/components/Header";
+import { Heading } from "@/components/Heading";
+import { HomeContainer } from "@/components/Home";
+import { LinkButton } from "@/components/LinkButton";
+import { Main } from "@/components/Main";
 import Head from "next/head";
-import Image from "next/image";
-import { Inter } from "@next/font/google";
-
-const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
   return (
@@ -13,7 +14,17 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main></main>
+      <Main>
+        <Header />
+        <HomeContainer>
+          <div>
+            <Heading size="6xl">
+              Creative, UI/UX Designer and Developer{" "}
+            </Heading>
+          </div>
+          <LinkButton>My Works</LinkButton>
+        </HomeContainer>
+      </Main>
     </>
   );
 }
