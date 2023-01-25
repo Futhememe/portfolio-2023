@@ -3,8 +3,9 @@ import { ElementType } from "react";
 import { styled } from "@/styles";
 
 export const Heading = styled("h2", {
-  fontFamily: "$default",
+  fontFamily: "$heading",
   lineHeight: "$shorter",
+  fontWeight: "$medium",
   margin: 0,
   color: "$black",
 
