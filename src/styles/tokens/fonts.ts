@@ -1,4 +1,5 @@
 export const fonts = {
-  default: 'Roboto, sans-serif',
+  default: 'Inter, sans-serif',
+  heading: 'Syne, sans-serif',
   code: 'monospace',
 }
