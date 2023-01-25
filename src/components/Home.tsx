@@ -1,0 +1,28 @@
+import { styled } from "@/styles";
+import { Heading } from "./Heading";
+import { LinkContainer } from "./LinkButton/styles";
+import { Text } from "./Text";
+
+export const HomeContainer = styled("div", {
+  display: "flex",
+  flexDirection: "column",
+  minHeight: "calc(100vh - 74px)",
+
+  justifyContent: "center",
+  alignItems: "center",
+
+  padding: "$20 125px",
+
+  div: {
+    width: "100%",
+  },
+
+  [`${Heading}`]: {
+    maxWidth: 700,
+    textAlign: "initial",
+  },
+
+  [`> ${LinkContainer}`]: {
+    marginTop: "134px",
+  },
+});
