@@ -1,4 +1,5 @@
 import { styled } from "@/styles";
+import { ConnectingContainer } from "./Connecting/styles";
 import { Heading } from "./Heading";
 import { LinkContainer } from "./LinkButton/styles";
 import { Text } from "./Text";
@@ -25,5 +26,16 @@ export const HomeContainer = styled("div", {
 
   [`> ${LinkContainer}`]: {
     marginTop: "134px",
+  },
+});
+
+export const IntroductionSection = styled("div", {
+  display: "flex",
+  flexDirection: "column",
+
+  padding: "$20 125px",
+
+  [`${ConnectingContainer}`]: {
+    marginTop: "148px",
   },
 });
