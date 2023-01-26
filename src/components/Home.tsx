@@ -7,6 +7,7 @@ export const HomeContainer = styled("div", {
   display: "flex",
   flexDirection: "column",
   minHeight: "calc(100vh - 74px)",
+  maxWidth: "100vw",
 
   justifyContent: "center",
   alignItems: "center",
