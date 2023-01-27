@@ -8,6 +8,24 @@ export const ConnectingContainer = styled('div', {
   width: '100%',
 
   alignItems: 'center',
+
+  [`${Text}`]: {
+    fontSize: '$4xl'
+  },
+
+  [`${Divider}`]: {
+    height: '5px',
+  },
+
+  "@media(max-width: 600px)": {
+    [`${Divider}`]: {
+      height: '2px',
+    },
+
+    [`${Text}`]: {
+      fontSize: '$2xl'
+    },
+  },
 })
 
 export const CodeContainer = styled('div', {
@@ -19,16 +37,23 @@ export const CodeContainer = styled('div', {
   '> div': {
     width: '50%',
 
-
-    [`> ${Divider}`]: {
-      height: '5px',
-    },
-
     [`> ${Text}`]: {
       width: '100%',
       textAlign: 'end'
+    },
+
+    "@media(max-width: 600px)": {
+      [`> ${Text}`]: {
+        fontSize: '$xl'
+      }
+    },
+  },
+
+  "@media(max-width: 600px)": {
+    '> div': {
+      width: '100%'
     }
-  }
+  },
 })
 
 export const DesignContainer = styled('div', {
@@ -40,15 +65,22 @@ export const DesignContainer = styled('div', {
   '> div': {
     width: '50%',
 
-
-    [`> ${Divider}`]: {
-      height: '5px',
-    },
-
     [`> ${Text}`]: {
       width: '100%',
       textAlign: 'start'
+    },
+
+    "@media(max-width: 600px)": {
+      [`> ${Text}`]: {
+        fontSize: '$xl'
+      }
+    },
+  },
+
+  "@media(max-width: 600px)": {
+    '> div': {
+      width: '100%'
     }
-  }
+  },
 })
 

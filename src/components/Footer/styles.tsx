@@ -18,6 +18,18 @@ export const FooterContainer = styled("div", {
   width: "100%",
 
   padding: "125px",
+
+  "@media(max-width: 600px)": {
+    padding: "$10 $6",
+
+    [`> ${Heading}`]: {
+      fontSize: "$4xl",
+    },
+
+    [`> ${Text}`]: {
+      fontSize: "$md",
+    },
+  },
 });
 
 export const SocialContainer = styled("div", {
@@ -25,4 +37,8 @@ export const SocialContainer = styled("div", {
   gap: "$12",
 
   marginTop: "$20",
+
+  "@media(max-width: 600px)": {
+    marginTop: "$5",
+  },
 });

@@ -21,20 +21,17 @@ export default function Home() {
         <Header />
         <HomeContainer>
           <div>
-            <Heading size="6xl">
-              Creative, UI/UX Designer and Developer{" "}
-            </Heading>
+            <Heading>Creative, UI/UX Designer and Developer </Heading>
           </div>
           <LinkButton>My Works</LinkButton>
         </HomeContainer>
         <Banner />
         <IntroductionSection>
-          <Heading size="3xl">
+          <Heading>
             Taking your business to the next level connecting code and design
           </Heading>
           <Connecting />
         </IntroductionSection>
-
         <Footer />
       </Main>
     </>
