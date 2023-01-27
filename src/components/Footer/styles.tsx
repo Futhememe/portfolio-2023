@@ -19,3 +19,10 @@ export const FooterContainer = styled("div", {
 
   padding: "125px",
 });
+
+export const SocialContainer = styled("div", {
+  display: "flex",
+  gap: "$12",
+
+  marginTop: "$20",
+});
