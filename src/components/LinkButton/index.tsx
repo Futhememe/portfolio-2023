@@ -1,14 +1,15 @@
+import { ComponentProps } from "@stitches/react";
 import { ArrowUpRight } from "phosphor-react";
 import { ReactNode } from "react";
 import { LinkContainer } from "./styles";
 
-interface LinkButtonProps {
+interface LinkButtonProps extends ComponentProps<typeof LinkContainer> {
   children: ReactNode;
 }
 
-export const LinkButton = ({ children }: LinkButtonProps) => {
+export const LinkButton = ({ children, ...rest }: LinkButtonProps) => {
   return (
-    <LinkContainer>
+    <LinkContainer {...rest}>
       {children}
       <ArrowUpRight size={18} />
     </LinkContainer>
