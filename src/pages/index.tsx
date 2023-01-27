@@ -1,5 +1,6 @@
 import { Banner } from "@/components/Banner";
 import { Connecting } from "@/components/Connecting";
+import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { Heading } from "@/components/Heading";
 import { HomeContainer, IntroductionSection } from "@/components/Home";
@@ -33,6 +34,8 @@ export default function Home() {
           </Heading>
           <Connecting />
         </IntroductionSection>
+
+        <Footer />
       </Main>
     </>
   );
