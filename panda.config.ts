@@ -15,13 +15,13 @@ export default defineConfig({
       extend: {
         tokens: {
           colors: {
-            black: { value: '#111013' },
-            grayspecial: { value: '#242326' },
-            yellowspecial: { value: '#F5EFDF' }
+            text: { value: '#1D1D1D' },
+            darkbackground: { value: '#2D2D2D' },
+            background: { value: '#F8F5F1' }
           },
           fonts: {
-            display: { value: 'var(--font-syne)' },
-            body: { value: 'var(--font-inter)' }
+            display: { value: "'Cabinet Grotesk', sans-serif" },
+            body: { value: "'Satoshi', sans-serif" }
           }
         }
       }
