@@ -1,16 +1,12 @@
+import { Footer } from "@/components/Footer";
 import "./globals.css";
-import { Inter, Syne } from "next/font/google";
+import { Inter } from "next/font/google";
+import { css } from "@/styled-system/css";
 
 const inter = Inter({
   subsets: ["latin"],
   display: "swap",
   variable: "--font-inter",
-});
-
-const syne = Syne({
-  subsets: ["latin"],
-  display: "swap",
-  variable: "--font-syne",
 });
 
 export const metadata = {
@@ -24,8 +20,26 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${inter.variable} ${syne.variable}`}>
-      <body>{children}</body>
+    <html lang="en">
+      <head>
+        <link rel="preconnect" href="https://api.fontshare.com" />
+        <link
+          href="https://api.fontshare.com/v2/css?f[]=satoshi@900,700,500,701,501,401,901,400&f[]=cabinet-grotesk@800,500,700,400,300&display=swap"
+          rel="stylesheet"
+        />
+      </head>
+      <body
+        className={css({
+          display: "flex",
+          flexDir: "column",
+          alignItems: "center",
+
+          bgColor: "background",
+        })}
+      >
+        {children}
+        <Footer />
+      </body>
     </html>
   );
 }
