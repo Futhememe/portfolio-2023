@@ -1,11 +1,18 @@
-import { HeaderContainer, button, title } from "./styles";
+import { css } from "@/styled-system/css";
+import { Logo } from "../Assets/logo";
 
 export const Header = () => {
   return (
-    <HeaderContainer>
-      <p className={title}>Gustavo Souza - 2023</p>
-
-      <button className={button}>Menu</button>
-    </HeaderContainer>
+    <header
+      className={css({
+        display: "flex",
+        flex: "1",
+        maxH: "3.4625rem",
+        alignItems: "center",
+        padding: "1rem 3.5rem",
+      })}
+    >
+      <Logo />
+    </header>
   );
 };
