@@ -12,6 +12,7 @@ export const Hero = () => {
         justifyContent: "center",
 
         maxH: "calc(100vh - 3.4625rem)",
+        minH: "calc(100vh - 3.4625rem)",
         position: "relative",
       })}
     >
