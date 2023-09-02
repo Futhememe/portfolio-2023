@@ -1,14 +1,86 @@
-import { Display } from "../Typograph";
+"use client";
+import { css } from "@/styled-system/css";
+import { LinkButton } from "../LinkButton";
+import { Display, Text } from "../Typograph";
+import { motion } from "framer-motion";
 
 export const WorkTogether = () => {
   return (
-    <div>
-      <div>
-        <Display>Let{"'"}s</Display>
-        <div />
-        <Display>work</Display>
+    <div
+      className={css({
+        display: "flex",
+        flex: 1,
+        flexDir: "column",
+        alignItems: "center",
+        justifyContent: "center",
+
+        minH: "calc(100vh - 5rem)",
+      })}
+    >
+      <div
+        className={css({
+          display: "flex",
+          alignItems: "center",
+          gap: "1rem",
+
+          position: "relative",
+        })}
+      >
+        <Display css={{ fontSize: "6rem", lineHeight: "tight" }}>
+          Let{"'"}s
+        </Display>
+        <motion.div
+          className={css({
+            display: "flex",
+            h: "3px",
+            w: "6.31rem",
+            bgColor: "text",
+          })}
+          animate
+        />
+        <Display css={{ fontSize: "6rem", lineHeight: "tight" }}>work</Display>
+
+        <Text
+          css={{
+            fontWeight: 501,
+            position: "absolute",
+            opacity: "0.7",
+            top: "-4rem",
+            left: "-4rem",
+          }}
+        >
+          Say hi
+        </Text>
+        <Text
+          css={{
+            fontWeight: 501,
+            position: "absolute",
+            opacity: "0.7",
+            right: "-6rem",
+            bottom: "-4rem",
+          }}
+        >
+          Say your ideas
+        </Text>
+        <Text
+          css={{
+            fontWeight: 501,
+            position: "absolute",
+            opacity: "0.7",
+            left: "-6rem",
+            bottom: "-7rem",
+          }}
+        >
+          Let{"'"}s chat
+        </Text>
       </div>
-      <Display>together</Display>
+      <Display css={{ fontSize: "6rem", lineHeight: "tight" }}>
+        together
+      </Display>
+
+      <div className={css({ display: "flex", mt: "4rem" })}>
+        <LinkButton>get in touch</LinkButton>
+      </div>
     </div>
   );
 };

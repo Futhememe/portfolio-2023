@@ -7,6 +7,7 @@ import Lenis from "@studio-freight/lenis";
 import { About } from "@/components/About";
 import { Skills } from "@/components/Skills";
 import { SelectedWork } from "@/components/SelectedWork";
+import { WorkTogether } from "@/components/WorkTogether";
 
 export default function Home() {
   useEffect(() => {
@@ -38,6 +39,7 @@ export default function Home() {
       <About />
       <Skills />
       <SelectedWork />
+      <WorkTogether />
     </main>
   );
 }
