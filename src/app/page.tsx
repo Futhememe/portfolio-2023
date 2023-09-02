@@ -1,15 +1,31 @@
+"use client";
 import { Header } from "@/components/Header";
 import { Hero } from "@/components/Hero";
 import { css } from "@/styled-system/css";
+import { useEffect } from "react";
+import Lenis from "@studio-freight/lenis";
+import { About } from "@/components/About";
+import { Skills } from "@/components/Skills";
+import { SelectedWork } from "@/components/SelectedWork";
 
 export default function Home() {
+  useEffect(() => {
+    const lenis = new Lenis();
+
+    function raf(time: any) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+
+    requestAnimationFrame(raf);
+  }, []);
+
   return (
     <main
       className={css({
         display: "flex",
         flexDir: "column",
         minH: "100vh",
-        maxH: "100vh",
         minW: "calc(100vw - 1rem)",
         maxW: "calc(100vw - 1rem)",
         overflowY: "hidden",
@@ -19,6 +35,9 @@ export default function Home() {
     >
       <Header />
       <Hero />
+      <About />
+      <Skills />
+      <SelectedWork />
     </main>
   );
 }
