@@ -1,14 +1,16 @@
 import { css } from "@/styled-system/css";
 import { SystemStyleObject } from "@/styled-system/types";
-import { ReactNode } from "react";
+import { MutableRefObject, ReactNode } from "react";
+import { HTMLMotionProps, motion } from "framer-motion";
 
-interface TextProps {
+interface TextProps extends HTMLMotionProps<"p"> {
   children: ReactNode;
   css?: SystemStyleObject;
+  ref?: MutableRefObject<any>;
 }
 
 export const Display = ({ children, css: styles }: TextProps) => (
-  <h2
+  <motion.h2
     className={css({
       fontFamily: "display",
       color: "text",
@@ -17,18 +19,19 @@ export const Display = ({ children, css: styles }: TextProps) => (
     })}
   >
     {children}
-  </h2>
+  </motion.h2>
 );
 
-export const Text = ({ children, css: styles }: TextProps) => (
-  <p
+export const Text = ({ children, css: styles, ...rest }: TextProps) => (
+  <motion.p
     className={css({
       fontFamily: "body",
       color: "text",
       fontWeight: 400,
       ...styles,
     })}
+    {...rest}
   >
     {children}
-  </p>
+  </motion.p>
 );
