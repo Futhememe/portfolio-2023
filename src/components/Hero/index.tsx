@@ -43,6 +43,7 @@ export const Hero = () => {
           animate={
             isFirstLineInView ? SlideInState.VISIBLE : SlideInState.OUTOFVIEW
           }
+          initial={SlideInState.OUTOFVIEW}
           variants={slideIn}
           transition={{ delay: 0.2 }}
         >
@@ -55,6 +56,7 @@ export const Hero = () => {
           animate={
             isSecondLineInView ? SlideInState.VISIBLE : SlideInState.OUTOFVIEW
           }
+          initial={SlideInState.OUTOFVIEW}
           variants={slideIn}
           transition={{ delay: 0.6 }}
         >
@@ -67,6 +69,7 @@ export const Hero = () => {
           animate={
             isThirdLineInView ? SlideInState.VISIBLE : SlideInState.OUTOFVIEW
           }
+          initial={SlideInState.OUTOFVIEW}
           variants={slideIn}
           transition={{ delay: 1 }}
         >
