@@ -5,6 +5,7 @@ import { CopyrightLogo, WhiteLogo } from "../Assets/logo";
 import { Text } from "../Typograph";
 import { InstagramLogo, LinkedinLogo } from "@phosphor-icons/react";
 import { MenuButton, Navbar } from "../NavBar";
+import MagneticElement from "../MagneticElement";
 
 export const Footer = () => {
   return (
@@ -42,8 +43,12 @@ export const Footer = () => {
               color: "background",
             })}
           >
-            <InstagramLogo size={32} />
-            <LinkedinLogo size={32} />
+            <MagneticElement>
+              <InstagramLogo size={32} />
+            </MagneticElement>
+            <MagneticElement>
+              <LinkedinLogo size={32} />
+            </MagneticElement>
             <Text css={{ color: "background" }}>gustavosouza@skiff.com</Text>
           </div>
           <WhiteLogo />
