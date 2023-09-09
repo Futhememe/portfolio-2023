@@ -8,6 +8,7 @@ export const Header = () => {
         display: "flex",
         flex: "1",
         maxH: "3.4625rem",
+        width: "100%",
         alignItems: "center",
         padding: "1rem 3.5rem",
       })}
