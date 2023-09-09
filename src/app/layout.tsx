@@ -2,6 +2,7 @@ import { Footer } from "@/components/Footer";
 import "./globals.css";
 import { Inter } from "next/font/google";
 import { css } from "@/styled-system/css";
+import { Skills } from "@/components/Skills";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -33,6 +34,9 @@ export default function RootLayout({
           display: "flex",
           flexDir: "column",
           alignItems: "center",
+          minW: "calc(100vw - 1rem)",
+          maxW: "calc(100vw - 1rem)",
+          minH: "100vh",
 
           bgColor: "background",
         })}
