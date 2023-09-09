@@ -6,8 +6,12 @@ import { Text } from "../Typograph";
 import { InstagramLogo, LinkedinLogo } from "@phosphor-icons/react";
 import { MenuButton, Navbar } from "../NavBar";
 import MagneticElement from "../MagneticElement";
+import { usePathname, useRouter } from "next/navigation";
 
 export const Footer = () => {
+  const router = useRouter();
+  const pathname = usePathname();
+
   return (
     <>
       <footer
@@ -68,10 +72,30 @@ export const Footer = () => {
         </div>
       </footer>
       <Navbar>
-        <MenuButton variant="selected">Home</MenuButton>
-        <MenuButton>About</MenuButton>
-        <MenuButton>Projects</MenuButton>
-        <MenuButton>Contact</MenuButton>
+        <MenuButton
+          variant={pathname === "/" ? "selected" : "default"}
+          onClick={() => router.push("/")}
+        >
+          Home
+        </MenuButton>
+        <MenuButton
+          variant={pathname === "/about" ? "selected" : "default"}
+          onClick={() => router.push("/about")}
+        >
+          About
+        </MenuButton>
+        <MenuButton
+          variant={pathname === "/showcase" ? "selected" : "default"}
+          onClick={() => router.push("/showcase")}
+        >
+          Projects
+        </MenuButton>
+        <MenuButton
+          variant={pathname === "/contact" ? "selected" : "default"}
+          onClick={() => router.push("/contact")}
+        >
+          Contact
+        </MenuButton>
       </Navbar>
     </>
   );
