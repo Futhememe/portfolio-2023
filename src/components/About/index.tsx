@@ -12,9 +12,6 @@ export const About = () => {
   const ref = useRef(null);
   const isAboutInView = useInView(ref, { once: true });
 
-  const { scrollYProgress } = useScroll({ target: ref });
-  const y = useParallax(scrollYProgress, 20);
-
   return (
     <div
       ref={ref}
@@ -26,8 +23,15 @@ export const About = () => {
       })}
     >
       <motion.div
-        className={css({ position: "absolute", top: "-2.5rem", left: 24 })}
-        // style={{ y }}
+        className={css({
+          position: "absolute",
+          top: "-2.5rem",
+          left: "-4.5rem",
+        })}
+        animate={isAboutInView ? SlideInState.VISIBLE : SlideInState.OUTOFVIEW}
+        initial={SlideInState.OUTOFVIEW}
+        variants={slideIn}
+        transition={{ delay: 0.2 }}
       >
         <Display
           css={{
@@ -59,7 +63,12 @@ export const About = () => {
             maxW: "21.625rem",
             gap: "3rem",
           })}
-          // style={{ y }}
+          animate={
+            isAboutInView ? SlideInState.VISIBLE : SlideInState.OUTOFVIEW
+          }
+          initial={SlideInState.OUTOFVIEW}
+          variants={slideIn}
+          transition={{ delay: 0.4 }}
         >
           <Text css={{ fontSize: "1.25rem", fontWeight: 401 }}>
             Lorem ipsum dolor sit amet consectetur. Est gravida quis pretium
