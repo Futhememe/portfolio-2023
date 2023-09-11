@@ -2,7 +2,7 @@ import { Footer } from "@/components/Footer";
 import "./globals.css";
 import { Inter } from "next/font/google";
 import { css } from "@/styled-system/css";
-import { Skills } from "@/components/Skills";
+import { TrailerMouse } from "@/components/TrailerMouse";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -39,8 +39,10 @@ export default function RootLayout({
           minH: "100vh",
 
           bgColor: "background",
+          position: "relative",
         })}
       >
+        <TrailerMouse cursorVariant="default" />
         {children}
         <Footer />
       </body>
