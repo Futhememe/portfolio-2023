@@ -6,9 +6,10 @@ import { css } from "@/styled-system/css";
 
 interface ITrailerMouseContext {
   projectEnter: () => void;
-  projectLeave: () => void;
   contactEnter: () => void;
-  contactLeave: () => void;
+  linkEnter: () => void;
+  transparentEnter: () => void;
+  mouseLeave: () => void;
 }
 
 const TrailerMouseContext = createContext<ITrailerMouseContext | null>(null);
@@ -18,9 +19,9 @@ interface ITrailerMouseProvider {
 }
 
 export const TrailerMouseProvider = ({ children }: ITrailerMouseProvider) => {
-  const [cursorText, setCursorText] = useState<string>("");
+  const [cursorText, setCursorText] = useState<string | ReactNode>("");
   const [cursorVariant, setCursorVariant] = useState<
-    "default" | "project" | "contact"
+    "default" | "project" | "contact" | "link" | "transparent"
   >("default");
   const { x, y }: any = useMousePosition();
 
@@ -51,13 +52,33 @@ export const TrailerMouseProvider = ({ children }: ITrailerMouseProvider) => {
     },
     contact: {
       opacity: 1,
-      backgroundColor: "#FFBCBC",
+      backgroundColor: "#F1ECE4",
       color: "#1d1d1d",
       height: 64,
       width: 64,
       fontSize: "32px",
+      cursor: "none",
       x: x - 48,
       y: y - 48,
+    },
+    link: {
+      opacity: 0.5,
+      backgroundColor: "#F1ECE4",
+      color: "#1d1d1d",
+      height: 64,
+      width: 64,
+      fontSize: "32px",
+      cursor: "none",
+      x: x - 26,
+      y: y - 26,
+    },
+    transparent: {
+      opacity: 0,
+      backgroundColor: "transparent",
+      height: 16,
+      width: 16,
+      x,
+      y,
     },
   };
 
@@ -72,17 +93,22 @@ export const TrailerMouseProvider = ({ children }: ITrailerMouseProvider) => {
     setCursorVariant("project");
   }
 
-  function projectLeave() {
-    setCursorText("");
-    setCursorVariant("default");
-  }
-
   function contactEnter() {
     setCursorText("👋");
     setCursorVariant("contact");
   }
 
-  function contactLeave() {
+  function linkEnter() {
+    setCursorText("");
+    setCursorVariant("link");
+  }
+
+  function transparentEnter() {
+    setCursorText("");
+    setCursorVariant("transparent");
+  }
+
+  function mouseLeave() {
     setCursorText("");
     setCursorVariant("default");
   }
@@ -91,9 +117,10 @@ export const TrailerMouseProvider = ({ children }: ITrailerMouseProvider) => {
     <TrailerMouseContext.Provider
       value={{
         projectEnter,
-        projectLeave,
         contactEnter,
-        contactLeave,
+        linkEnter,
+        transparentEnter,
+        mouseLeave,
       }}
     >
       <motion.div
