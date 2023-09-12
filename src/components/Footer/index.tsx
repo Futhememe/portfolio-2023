@@ -7,10 +7,13 @@ import { InstagramLogo, LinkedinLogo } from "@phosphor-icons/react";
 import { MenuButton, Navbar } from "../NavBar";
 import MagneticElement from "../MagneticElement";
 import { usePathname, useRouter } from "next/navigation";
+import { motion } from "framer-motion";
+import { useTrailerMouse } from "@/hooks/useTrailerMouse";
 
 export const Footer = () => {
   const router = useRouter();
   const pathname = usePathname();
+  const { transparentEnter, mouseLeave } = useTrailerMouse();
 
   return (
     <>
@@ -40,12 +43,14 @@ export const Footer = () => {
             bgColor: "darkbackground",
           })}
         >
-          <div
+          <motion.div
             className={css({
               display: "flex",
               gap: "1rem",
               color: "background",
             })}
+            onMouseEnter={transparentEnter}
+            onMouseLeave={mouseLeave}
           >
             <MagneticElement>
               <InstagramLogo size={32} />
@@ -54,7 +59,7 @@ export const Footer = () => {
               <LinkedinLogo size={32} />
             </MagneticElement>
             <Text css={{ color: "background" }}>gustavosouza@skiff.com</Text>
-          </div>
+          </motion.div>
           <WhiteLogo />
         </div>
         <div
@@ -71,7 +76,7 @@ export const Footer = () => {
           <Text>Created by Gustavo</Text>
         </div>
       </footer>
-      <Navbar>
+      <Navbar onMouseEnter={transparentEnter} onMouseLeave={mouseLeave}>
         <MenuButton
           variant={pathname === "/" ? "selected" : "default"}
           onClick={() => router.push("/")}

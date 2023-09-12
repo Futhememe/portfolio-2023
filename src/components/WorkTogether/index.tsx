@@ -3,8 +3,11 @@ import { css } from "@/styled-system/css";
 import { LinkButton } from "../LinkButton";
 import { Display, Text } from "../Typograph";
 import { motion } from "framer-motion";
+import { useTrailerMouse } from "@/hooks/useTrailerMouse";
 
 export const WorkTogether = () => {
+  const { contactEnter, mouseLeave } = useTrailerMouse();
+
   return (
     <div
       className={css({
@@ -78,9 +81,13 @@ export const WorkTogether = () => {
         together
       </Display>
 
-      <div className={css({ display: "flex", mt: "4rem" })}>
+      <motion.div
+        onMouseEnter={contactEnter}
+        onMouseLeave={mouseLeave}
+        className={css({ display: "flex", mt: "4rem" })}
+      >
         <LinkButton>get in touch</LinkButton>
-      </div>
+      </motion.div>
     </div>
   );
 };

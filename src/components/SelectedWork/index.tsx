@@ -2,8 +2,11 @@ import { css } from "@/styled-system/css";
 import { Display } from "../Typograph";
 import { ProjectResume } from "../ProjectResume";
 import { LinkButton } from "../LinkButton";
+import { useTrailerMouse } from "@/hooks/useTrailerMouse";
 
 export const SelectedWork = () => {
+  const { linkEnter, mouseLeave } = useTrailerMouse();
+
   return (
     <div
       className={css({
@@ -29,7 +32,9 @@ export const SelectedWork = () => {
         <ProjectResume />
         <ProjectResume align="row-reverse" />
       </div>
-      <LinkButton>view more here</LinkButton>
+      <div onMouseEnter={linkEnter} onMouseLeave={mouseLeave}>
+        <LinkButton>view more here</LinkButton>
+      </div>
     </div>
   );
 };
