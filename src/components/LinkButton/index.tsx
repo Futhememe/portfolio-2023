@@ -7,11 +7,12 @@ import MagneticElement from "../MagneticElement";
 
 interface ILinkButton {
   children: ReactNode;
+  onClick?: () => void;
 }
-export const LinkButton = ({ children }: ILinkButton) => {
+export const LinkButton = ({ children, onClick }: ILinkButton) => {
   return (
     <MagneticElement>
-      <Button>
+      <Button onClick={onClick}>
         <div
           className={css({
             display: "flex",
