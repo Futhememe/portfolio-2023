@@ -3,6 +3,7 @@ import { Display } from "../Typograph";
 import { ProjectResume } from "../ProjectResume";
 import { LinkButton } from "../LinkButton";
 import { useTrailerMouse } from "@/hooks/useTrailerMouse";
+import { SkillTag } from "../SkillSet/styles";
 
 export const SelectedWork = () => {
   const { linkEnter, mouseLeave } = useTrailerMouse();
@@ -21,7 +22,7 @@ export const SelectedWork = () => {
       >
         Selected work
       </Display>
-      <div
+      {/* <div
         className={css({
           display: "flex",
           flexDir: "column",
@@ -34,6 +35,9 @@ export const SelectedWork = () => {
       </div>
       <div onMouseEnter={linkEnter} onMouseLeave={mouseLeave}>
         <LinkButton>view more here</LinkButton>
+      </div> */}
+      <div>
+        <SkillTag>🚧 work in progress come here again in a few days</SkillTag>
       </div>
     </div>
   );
