@@ -8,11 +8,14 @@ import { motion, useInView, useScroll } from "framer-motion";
 import { SlideInState, slideIn } from "@/utils/animations/slideIn";
 import { useParallax } from "@/hooks/useParallax";
 import { useTrailerMouse } from "@/hooks/useTrailerMouse";
+import { useRouter } from "next/navigation";
 
 export const About = () => {
   const ref = useRef(null);
   const isAboutInView = useInView(ref, { once: true });
   const { linkEnter, mouseLeave } = useTrailerMouse();
+
+  const router = useRouter();
 
   return (
     <div
@@ -83,7 +86,14 @@ export const About = () => {
             onMouseLeave={mouseLeave}
             className={css({ maxW: "calc(114px + 25px)" })}
           >
-            <LinkButton>view more here</LinkButton>
+            <LinkButton
+              onClick={() => {
+                router.push("/about");
+                mouseLeave();
+              }}
+            >
+              view more here
+            </LinkButton>
           </div>
         </motion.div>
       </div>
