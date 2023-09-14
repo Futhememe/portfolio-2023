@@ -31,7 +31,7 @@ export const TrailerMouseProvider = ({ children }: ITrailerMouseProvider) => {
       height: 10,
       width: 10,
       fontSize: "16px",
-      backgroundColor: "#1d1d1d",
+      backgroundColor: "#2d2d2d",
       x,
       y,
       transition: {
@@ -62,13 +62,13 @@ export const TrailerMouseProvider = ({ children }: ITrailerMouseProvider) => {
       y: y - 48,
     },
     link: {
-      opacity: 0.5,
+      opacity: 1,
       backgroundColor: "#F1ECE4",
       color: "#1d1d1d",
       height: 64,
       width: 64,
       fontSize: "32px",
-      cursor: "none",
+      cursor: "pointer",
       x: x - 26,
       y: y - 26,
     },
@@ -143,6 +143,9 @@ export const TrailerMouseProvider = ({ children }: ITrailerMouseProvider) => {
           textAlign: "center",
           fontSize: "16px",
         })}
+        style={{
+          mixBlendMode: cursorVariant === "link" ? "exclusion" : "normal",
+        }}
         animate={cursorVariant}
         transition={spring}
       >
