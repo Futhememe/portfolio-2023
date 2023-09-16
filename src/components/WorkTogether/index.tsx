@@ -4,9 +4,11 @@ import { LinkButton } from "../LinkButton";
 import { Display, Text } from "../Typograph";
 import { motion } from "framer-motion";
 import { useTrailerMouse } from "@/hooks/useTrailerMouse";
+import { useRouter } from "next/navigation";
 
 export const WorkTogether = () => {
   const { contactEnter, mouseLeave } = useTrailerMouse();
+  const router = useRouter();
 
   return (
     <div
@@ -86,7 +88,14 @@ export const WorkTogether = () => {
         onMouseLeave={mouseLeave}
         className={css({ display: "flex", mt: "4rem" })}
       >
-        <LinkButton>get in touch</LinkButton>
+        <LinkButton
+          onClick={() => {
+            mouseLeave();
+            router.push("/contact");
+          }}
+        >
+          get in touch
+        </LinkButton>
       </motion.div>
     </div>
   );
