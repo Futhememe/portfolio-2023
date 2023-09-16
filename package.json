@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@phosphor-icons/react": "^2.0.10",
+    "@radix-ui/react-form": "^0.0.3",
     "@studio-freight/lenis": "^1.0.19",
     "@types/node": "20.3.3",
     "@types/react": "18.2.14",
