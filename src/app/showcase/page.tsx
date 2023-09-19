@@ -11,12 +11,12 @@ export default function Showcase() {
         flexDir: "column",
         alignItems: "center",
         w: "100%",
-        p: "4rem",
+        p: ["4rem 1rem", "4rem"],
         minH: "100vh",
         position: "relative",
       })}
     >
-      <Display css={{ fontSize: "6rem" }}>Showcase</Display>
+      <Display css={{ fontSize: ["5rem", "6rem"] }}>Showcase</Display>
       <SkillTag>🚧 work in progress come here again in a few days</SkillTag>
     </div>
   );
