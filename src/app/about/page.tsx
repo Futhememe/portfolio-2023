@@ -52,7 +52,7 @@ export default function About() {
         flexDir: "column",
         alignItems: "center",
         w: "100%",
-        p: "4rem",
+        p: ["4rem 1rem", "4rem, 1rem", "4rem"],
         minH: "100vh",
         position: "relative",
       })}
@@ -60,10 +60,11 @@ export default function About() {
       <div
         className={css({
           display: "flex",
+          flexDir: ["column", "column", "row"],
           flex: 1,
           alignItems: "center",
           w: "100%",
-          gap: "8rem",
+          gap: ["2rem", "2rem", "8rem"],
           minH: "calc(100vh - 12rem)",
         })}
       >
@@ -71,7 +72,7 @@ export default function About() {
           className={css({
             display: "flex",
             position: "absolute",
-            top: 8,
+            top: [4, -2, 8],
             right: 24,
             zIndex: 1,
           })}
@@ -82,13 +83,22 @@ export default function About() {
           variants={slideIn}
           transition={{ delay: 0.4 }}
         >
-          <Display css={{ fontSize: "7rem" }}>Know me better</Display>
+          <Display
+            css={{ fontSize: ["2.5rem", "5rem", "7rem"], fontWeight: 500 }}
+          >
+            Know me better
+          </Display>
         </motion.div>
         <div
-          className={css({ display: "flex", pl: "9rem", position: "relative" })}
+          className={css({
+            display: "flex",
+            pl: ["0", "0", "9rem"],
+            position: "relative",
+          })}
         >
           <motion.div
             className={css({
+              display: ["none", "flex"],
               position: "absolute",
               w: 375,
               h: 565,

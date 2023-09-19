@@ -24,7 +24,9 @@ export const ExperienceLine = ({
       })}
     >
       <div className={css({ display: "flex", flexDir: "column" })}>
-        <Text css={{ fontSize: "2rem", fontWeight: 500 }}>{company}</Text>
+        <Text css={{ fontSize: ["1.5rem", "2rem"], fontWeight: 500 }}>
+          {company}
+        </Text>
         <div
           className={css({
             display: "flex",
@@ -37,13 +39,13 @@ export const ExperienceLine = ({
           ))}
         </div>
       </div>
-      <Text>{timeline}</Text>
+      <Text css={{ fontSize: ["0.875rem", "1rem"] }}>{timeline}</Text>
     </div>
   );
 };
 
 export const Tag = styled(SkillTag, {
   base: {
-    fontSize: "0.875rem",
+    fontSize: ["0.75rem", "0.875rem"],
   },
 });
