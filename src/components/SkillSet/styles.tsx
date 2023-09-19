@@ -11,7 +11,7 @@ export const SkillTag = styled("div", {
     bgColor: "darkbackground",
 
     fontFamily: "body",
-    fontSize: "1rem",
+    fontSize: ["0.875rem", "1rem"],
     fontWeight: 501,
 
     color: "background",

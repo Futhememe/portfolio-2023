@@ -13,12 +13,17 @@ export const SelectedWork = () => {
       className={css({
         display: "flex",
         flexDir: "column",
-        padding: "2rem",
+        padding: ["1rem", "2rem"],
         alignItems: "center",
       })}
     >
       <Display
-        css={{ fontSize: "6rem", w: "100%", textAlign: "right", px: "5rem" }}
+        css={{
+          fontSize: ["4rem", "6rem"],
+          w: "100%",
+          textAlign: ["center", "center", "right"],
+          px: ["0", "5rem"],
+        }}
       >
         Selected work
       </Display>

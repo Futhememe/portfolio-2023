@@ -50,7 +50,7 @@ export const Skills = () => {
       >
         <Display
           css={{
-            fontSize: "4rem",
+            fontSize: ["3.5rem", "4rem"],
             fontWeight: 500,
           }}
           // style={{ opacity }}

@@ -35,7 +35,7 @@ export const Hero = () => {
           flex: 1,
           alignItems: "center",
           justifyContent: "center",
-          mt: "-6rem",
+          mt: ["-7rem", "-6rem"],
         })}
       >
         <motion.div
@@ -47,7 +47,7 @@ export const Hero = () => {
           variants={slideIn}
           transition={{ delay: 0.2 }}
         >
-          <Display css={{ fontSize: "4rem", lineHeight: "tight" }}>
+          <Display css={{ fontSize: ["2.5rem", "4rem"], lineHeight: "tight" }}>
             Hello, {"I'm"} <b className={css({ fontWeight: 500 })}>Gustavo</b>
           </Display>
         </motion.div>
@@ -60,7 +60,7 @@ export const Hero = () => {
           variants={slideIn}
           transition={{ delay: 0.6 }}
         >
-          <Display css={{ fontSize: "4rem", lineHeight: "tight" }}>
+          <Display css={{ fontSize: ["2.5rem", "4rem"], lineHeight: "tight" }}>
             an creative designer
           </Display>
         </motion.div>
@@ -73,22 +73,31 @@ export const Hero = () => {
           variants={slideIn}
           transition={{ delay: 1 }}
         >
-          <Display css={{ fontSize: "4rem", lineHeight: "tight" }}>
+          <Display css={{ fontSize: ["2.5rem", "4rem"], lineHeight: "tight" }}>
             and developer
           </Display>
         </motion.div>
       </div>
 
-      <Text
-        css={{
-          fontSize: "1rem",
-          fontWeight: 501,
-          position: "absolute",
-          bottom: "7.5rem",
-        }}
+      <motion.div
+        ref={thirdLineRef}
+        animate={
+          isThirdLineInView ? SlideInState.VISIBLE : SlideInState.OUTOFVIEW
+        }
+        initial={SlideInState.OUTOFVIEW}
+        variants={slideIn}
+        transition={{ delay: 1.2 }}
+        className={css({ position: "absolute", bottom: "7.5rem" })}
       >
-        scroll for more
-      </Text>
+        <Text
+          css={{
+            fontSize: "1rem",
+            fontWeight: 501,
+          }}
+        >
+          scroll for more
+        </Text>
+      </motion.div>
     </div>
   );
 };

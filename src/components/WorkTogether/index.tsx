@@ -31,27 +31,33 @@ export const WorkTogether = () => {
           position: "relative",
         })}
       >
-        <Display css={{ fontSize: "6rem", lineHeight: "tight" }}>
+        <Display
+          css={{ fontSize: ["3.75rem", "5rem", "6rem"], lineHeight: "tight" }}
+        >
           Let{"'"}s
         </Display>
         <motion.div
           className={css({
             display: "flex",
             h: "3px",
-            w: "6.31rem",
+            w: ["5rem", "6.31rem"],
             bgColor: "text",
           })}
           animate
         />
-        <Display css={{ fontSize: "6rem", lineHeight: "tight" }}>work</Display>
+        <Display
+          css={{ fontSize: ["3.75rem", "5rem", "6rem"], lineHeight: "tight" }}
+        >
+          work
+        </Display>
 
         <Text
           css={{
             fontWeight: 501,
             position: "absolute",
             opacity: "0.7",
-            top: "-4rem",
-            left: "-4rem",
+            top: ["-4rem"],
+            left: ["1rem", "-4rem"],
           }}
         >
           Say hi
@@ -61,25 +67,27 @@ export const WorkTogether = () => {
             fontWeight: 501,
             position: "absolute",
             opacity: "0.7",
-            right: "-6rem",
-            bottom: "-4rem",
+            right: ["0", "-6rem"],
+            bottom: ["5rem", "-4rem"],
           }}
         >
-          Say your ideas
+          Share your ideas
         </Text>
         <Text
           css={{
             fontWeight: 501,
             position: "absolute",
             opacity: "0.7",
-            left: "-6rem",
+            left: ["1rem", "-6rem"],
             bottom: "-7rem",
           }}
         >
           Let{"'"}s chat
         </Text>
       </div>
-      <Display css={{ fontSize: "6rem", lineHeight: "tight" }}>
+      <Display
+        css={{ fontSize: ["3.75rem", "5rem", "6rem"], lineHeight: "tight" }}
+      >
         together
       </Display>
 

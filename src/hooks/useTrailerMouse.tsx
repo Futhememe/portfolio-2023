@@ -126,9 +126,10 @@ export const TrailerMouseProvider = ({ children }: ITrailerMouseProvider) => {
       <motion.div
         variants={variants}
         className={css({
+          opacity: [0, 1],
+          display: ["none", "flex"],
           position: "fixed",
-          zIndex: 100,
-          display: "flex",
+          zIndex: [1, 100],
           flexFlow: "row",
           alignContent: "center",
           justifyContent: "center",

@@ -5,7 +5,7 @@ export const Header = () => {
   return (
     <header
       className={css({
-        display: "flex",
+        display: ["none", "flex"],
         flex: "1",
         maxH: "3.4625rem",
         width: "100%",

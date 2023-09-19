@@ -21,7 +21,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html
+      className={css({
+        margin: 0,
+        padding: 0,
+        overflowX: "hidden",
+        overflowY: "scroll",
+      })}
+      lang="en"
+    >
       <head>
         <link rel="preconnect" href="https://api.fontshare.com" />
         <link
@@ -34,9 +42,13 @@ export default function RootLayout({
           display: "flex",
           flexDir: "column",
           alignItems: "center",
-          minW: "calc(100vw - 1rem)",
-          maxW: "calc(100vw - 1rem)",
+          minW: ["100vw", "calc(100vw - 1rem)"],
+          maxW: ["100vw", "calc(100vw - 1rem)"],
           minH: "100vh",
+          margin: 0,
+          p: 0,
+          // overflowX: "hidden",
+          // overflowY: "scroll",
 
           bgColor: "background",
           position: "relative",

@@ -22,16 +22,18 @@ export const About = () => {
       ref={ref}
       className={css({
         display: "flex",
-        flexDir: "column",
-        padding: "2.5rem 3.5rem",
+        flexDir: ["column"],
+        padding: ["4rem, 1rem", "6rem, 1rem", "2.5rem 3.5rem"],
+        mt: ["0", "2rem", "0"],
+        mb: ["5rem", "5rem", "0"],
         position: "relative",
       })}
     >
       <motion.div
         className={css({
           position: "absolute",
-          top: "-2.5rem",
-          left: "-4.5rem",
+          top: ["-3.25rem", "-4.5rem", "-2.5rem"],
+          left: ["0", "-3.5rem", "-4.5rem"],
         })}
         animate={isAboutInView ? SlideInState.VISIBLE : SlideInState.OUTOFVIEW}
         initial={SlideInState.OUTOFVIEW}
@@ -40,7 +42,7 @@ export const About = () => {
       >
         <Display
           css={{
-            fontSize: "6rem",
+            fontSize: ["4.5rem", "6rem"],
           }}
         >
           About me
@@ -49,18 +51,21 @@ export const About = () => {
       <div
         className={css({
           display: "flex",
+          flexDir: ["column", "column", "row"],
           justifyContent: "center",
           alignItems: "center",
           padding: "1rem",
-          gap: "3.5rem",
+          gap: ["2rem", "2rem", "3.5rem"],
         })}
       >
-        <Image
-          src={photo}
-          alt="my photo with a camera"
-          width={375}
-          height={515}
-        />
+        <div className={css({ display: "flex" })}>
+          <Image
+            src={photo}
+            alt="my photo with a camera"
+            width={375}
+            height={515}
+          />
+        </div>
         <motion.div
           className={css({
             display: "flex",

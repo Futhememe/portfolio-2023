@@ -26,7 +26,7 @@ export const Footer = () => {
           minWidth: "calc(100vw - 1rem)",
           maxW: "calc(100vw - 1rem)",
           alignItems: "center",
-          padding: "1rem 3.5rem",
+          padding: ["1rem", "1rem 2rem", "1rem 3.5rem"],
           gap: "1.81rem",
           bgColor: "background",
         })}
@@ -35,7 +35,7 @@ export const Footer = () => {
           className={css({
             display: "flex",
             padding: "2rem 1.5rem",
-            justifyContent: "space-between",
+            justifyContent: ["center", "space-between"],
             alignItems: "center",
             width: "100%",
 
@@ -46,25 +46,31 @@ export const Footer = () => {
           <motion.div
             className={css({
               display: "flex",
+              flexDir: ["column", "row"],
+              alignItems: ["center"],
               gap: "1rem",
               color: "background",
             })}
             onMouseEnter={transparentEnter}
             onMouseLeave={mouseLeave}
           >
-            <MagneticElement>
-              <InstagramLogo size={32} />
-            </MagneticElement>
-            <MagneticElement>
-              <LinkedinLogo size={32} />
-            </MagneticElement>
+            <div className={css({ display: "flex", gap: "1rem" })}>
+              <MagneticElement>
+                <InstagramLogo size={32} />
+              </MagneticElement>
+              <MagneticElement>
+                <LinkedinLogo size={32} />
+              </MagneticElement>
+            </div>
             <Text css={{ color: "background" }}>gustavosouza@skiff.com</Text>
           </motion.div>
-          <WhiteLogo />
+          <div className={css({ display: ["none", "flex"] })}>
+            <WhiteLogo />
+          </div>
         </div>
         <div
           className={css({
-            display: "flex",
+            display: ["none", "flex"],
             flex: 1,
             alignItems: "center",
             justifyContent: "space-between",
