@@ -1,6 +1,7 @@
 import { styled } from "@/styled-system/jsx";
+import { motion } from "framer-motion";
 
-export const SkillTag = styled("div", {
+export const SkillTag = styled(motion.div, {
   base: {
     display: "flex",
     padding: "0.5rem",

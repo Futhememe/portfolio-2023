@@ -27,6 +27,7 @@ export default function RootLayout({
         padding: 0,
         overflowX: "hidden",
         overflowY: "scroll",
+        scrollbar: "hidden",
       })}
       lang="en"
     >

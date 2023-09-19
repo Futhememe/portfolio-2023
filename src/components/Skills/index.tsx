@@ -6,23 +6,104 @@ import { useScroll, motion, useTransform, useMotionValue } from "framer-motion";
 import { useRef } from "react";
 
 export const Skills = () => {
-  const ref = useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["start start", "end end"],
+  const projectSkillRef = useRef(null);
+  const designSkillRef = useRef(null);
+  const devSkillRef = useRef(null);
+
+  const { scrollYProgress: projectProgress } = useScroll({
+    target: projectSkillRef,
+    offset: ["start start", "center center", "end end"],
   });
 
-  const opacity = useTransform(
-    scrollYProgress,
-    // Map x from these values:
-    [100, 0],
-    // Into these values:
-    [0, 1]
+  const { scrollYProgress: tagProgress } = useScroll({
+    target: projectSkillRef,
+    offset: ["center center", "end end"],
+  });
+
+  const projectScaleIn = useTransform(
+    projectProgress,
+    [0, 0.5, 0.75, 1],
+    [0.95, 1, 1, 0.95]
+  );
+  const projectFadeIn = useTransform(
+    projectProgress,
+    [0, 0.5, 0.75, 1],
+    [0, 1, 1, 0]
+  );
+
+  const projectTagScaleIn = useTransform(
+    tagProgress,
+    [0, 0.5, 0.75, 1],
+    [0.95, 1, 1, 0.95]
+  );
+  const projectTagFadeIn = useTransform(
+    tagProgress,
+    [0, 0.5, 0.75, 1],
+    [0, 1, 1, 0]
+  );
+
+  const { scrollYProgress: designProgress } = useScroll({
+    target: designSkillRef,
+    offset: ["start start", "center center", "end end"],
+  });
+
+  const { scrollYProgress: designTagProgress } = useScroll({
+    target: designSkillRef,
+    offset: ["center center", "end end"],
+  });
+
+  const designScaleIn = useTransform(
+    designProgress,
+    [0, 0.5, 0.75, 1],
+    [0.95, 1, 1, 0.95]
+  );
+  const designFadeIn = useTransform(
+    designProgress,
+    [0, 0.5, 0.75, 1],
+    [0, 1, 1, 0]
+  );
+
+  const designTagScaleIn = useTransform(
+    designTagProgress,
+    [0, 0.5, 0.75, 1],
+    [0.95, 1, 1, 0.95]
+  );
+  const designTagFadeIn = useTransform(
+    designTagProgress,
+    [0, 0.5, 0.75, 1],
+    [0, 1, 1, 0]
+  );
+
+  const { scrollYProgress: devProgress } = useScroll({
+    target: devSkillRef,
+    offset: ["start start", "center center", "end end"],
+  });
+
+  const { scrollYProgress: devTagProgress } = useScroll({
+    target: devSkillRef,
+    offset: ["center center", "end end"],
+  });
+
+  const devScaleIn = useTransform(
+    devProgress,
+    [0, 0.5, 0.75, 1],
+    [0.95, 1, 1, 0.95]
+  );
+  const devFadeIn = useTransform(devProgress, [0, 0.5, 0.75, 1], [0, 1, 1, 0]);
+
+  const devTagScaleIn = useTransform(
+    devTagProgress,
+    [0, 0.5, 0.75, 1],
+    [0.95, 1, 1, 0.95]
+  );
+  const devTagFadeIn = useTransform(
+    devTagProgress,
+    [0, 0.5, 0.75, 1],
+    [0, 1, 1, 0]
   );
 
   return (
     <motion.div
-      ref={ref}
       className={css({
         display: "flex",
         alignItems: "center",
@@ -32,22 +113,7 @@ export const Skills = () => {
         minH: "100vh",
       })}
     >
-      {/* <motion.div
-        className={css({
-          position: "fixed",
-          top: 0,
-          left: 0,
-          right: 0,
-          height: "10px",
-          background: "red",
-          transformOrigin: "0%",
-        })}
-        style={{ scaleX: scrollYProgress }}
-      /> */}
-      <motion.div
-        className={css({ display: "flex", position: "sticky", top: "1rem" })}
-        style={{ opacity: opacity.get() }}
-      >
+      <motion.div className={css({ display: "flex" })}>
         <Display
           css={{
             fontSize: ["3.5rem", "4rem"],
@@ -59,15 +125,15 @@ export const Skills = () => {
         </Display>
       </motion.div>
       <motion.div
+        ref={projectSkillRef}
         className={css({
           display: "flex",
           flex: 1,
-          alignItems: "center",
+          alignItems: "flex-start",
           justifyContent: "center",
           paddingBottom: "5rem",
-          minH: "100vh",
-          position: "sticky",
-          top: 0,
+          minH: "400vh",
+          position: "relative",
         })}
       >
         <SkillSet
@@ -79,18 +145,20 @@ export const Skills = () => {
             "Site architecture",
             "Wireframe",
           ]}
+          displayStyle={{ scale: projectScaleIn, opacity: projectFadeIn }}
+          tagStyle={{ scale: projectTagScaleIn, opacity: projectTagFadeIn }}
         />
       </motion.div>
-      <div
+      <motion.div
+        ref={designSkillRef}
         className={css({
           display: "flex",
           flex: 1,
-          alignItems: "center",
+          alignItems: "flex-start",
           justifyContent: "center",
           paddingBottom: "5rem",
-          minH: "100vh",
-          position: "sticky",
-          top: 0,
+          minH: "400vh",
+          position: "relative",
         })}
       >
         <SkillSet
@@ -102,18 +170,20 @@ export const Skills = () => {
             "Animations",
             "Prototyping",
           ]}
+          displayStyle={{ scale: designScaleIn, opacity: designFadeIn }}
+          tagStyle={{ scale: designTagScaleIn, opacity: designTagFadeIn }}
         />
-      </div>
-      <div
+      </motion.div>
+      <motion.div
+        ref={devSkillRef}
         className={css({
           display: "flex",
           flex: 1,
-          alignItems: "center",
+          alignItems: "flex-start",
           justifyContent: "center",
           paddingBottom: "5rem",
-          minH: "100vh",
-          position: "sticky",
-          top: 0,
+          minH: "400vh",
+          position: "relative",
         })}
       >
         <SkillSet
@@ -125,8 +195,10 @@ export const Skills = () => {
             "CMS implementation",
             "Web animations",
           ]}
+          displayStyle={{ scale: devScaleIn, opacity: devFadeIn }}
+          tagStyle={{ scale: devTagScaleIn, opacity: devTagFadeIn }}
         />
-      </div>
+      </motion.div>
     </motion.div>
   );
 };
