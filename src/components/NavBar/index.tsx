@@ -5,13 +5,13 @@ export const Navbar = styled("div", {
     display: "flex",
     alignItems: "center",
     padding: "0.5rem",
-    gap: "1rem",
+    gap: ["0.5rem", "1rem"],
 
     borderRadius: "1rem",
     bgColor: "darkbackground",
 
     position: "sticky",
-    bottom: "2rem",
+    bottom: ["0", "2rem"],
   },
 });
 
