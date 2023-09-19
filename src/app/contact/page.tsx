@@ -14,12 +14,12 @@ export default function Contact() {
         flexDir: "column",
         alignItems: "center",
         w: "100%",
-        p: "4rem",
+        p: ["4rem 1rem", "4rem"],
         minH: "100vh",
         position: "relative",
       })}
     >
-      <Display css={{ fontSize: "6rem" }}>Contact</Display>
+      <Display css={{ fontSize: ["4.5rem", "6rem"] }}>Contact</Display>
       <Form.Root>
         <Form.Input
           name="name"

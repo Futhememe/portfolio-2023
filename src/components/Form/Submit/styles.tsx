@@ -3,7 +3,7 @@ import { styled } from "@/styled-system/jsx";
 export const Button = styled("button", {
   base: {
     display: "flex",
-    padding: "0.5rem",
+    padding: ["1rem 0.5rem", "0.5rem"],
     justifyContent: "center",
     alignItems: "center",
     gap: "0.625rem",
