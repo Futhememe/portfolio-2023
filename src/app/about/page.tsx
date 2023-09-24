@@ -84,7 +84,10 @@ export default function About() {
           transition={{ delay: 0.4 }}
         >
           <Display
-            css={{ fontSize: ["2.5rem", "5rem", "7rem"], fontWeight: 500 }}
+            css={{
+              fontSize: ["2.5rem", "5rem", "7rem"],
+              fontWeight: [500, 400],
+            }}
           >
             Know me better
           </Display>
