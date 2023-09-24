@@ -80,11 +80,13 @@ export const About = () => {
           variants={slideIn}
           transition={{ delay: 0.4 }}
         >
-          <Text css={{ fontSize: "1.25rem", fontWeight: 401 }}>
-            Lorem ipsum dolor sit amet consectetur. Est gravida quis pretium
-            volutpat sed vivamus. Cras odio placerat in sollicitudin non in nibh
-            eget. Rhoncus tempus ultrices augue consectetur facilisi faucibus
-            sit tellus. Metus sed velit morbi pellentesque.
+          <Text
+            css={{ fontSize: "1.25rem", fontWeight: 401, textAlign: "justify" }}
+          >
+            Hey, my name is Gustavo. I&apos;m a creative developer and designer
+            living in Brazil with a dream of always helping people, whether
+            it&apos;s with a website for their business, helping you understand
+            technology, or simply assisting you in crossing the street.
           </Text>
           <div
             onMouseEnter={linkEnter}

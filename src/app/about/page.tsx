@@ -123,7 +123,7 @@ export default function About() {
           className={css({
             display: "flex",
             flexDir: "column",
-            maxW: "21.625rem",
+            maxW: "26.625rem",
             gap: "3rem",
           })}
           animate={
@@ -133,11 +133,19 @@ export default function About() {
           variants={slideIn}
           transition={{ delay: 0.8 }}
         >
-          <Text css={{ fontSize: "1.25rem", fontWeight: 401 }}>
-            Lorem ipsum dolor sit amet consectetur. Est gravida quis pretium
-            volutpat sed vivamus. Cras odio placerat in sollicitudin non in nibh
-            eget. Rhoncus tempus ultrices augue consectetur facilisi faucibus
-            sit tellus. Metus sed velit morbi pellentesque.
+          <Text
+            css={{ fontSize: "1rem", fontWeight: 401, textAlign: "justify" }}
+          >
+            Hey, my name is Gustavo. I&apos;m a creative developer and designer
+            living in Brazil with a dream of always helping people, whether
+            it&apos;s with a website for their business, helping you understand
+            technology, or simply assisting you in crossing the street. We are
+            human beings, and we were made to help one another, and that&apos;s
+            my passion, helping. I&apos;m a designer who loves bringing life to
+            my creations, be it art or a website. Well, I love developing
+            solutions even for the simplest ideas, and when I&apos;m not
+            creating anything, you can find me cooking, drawing, or simply
+            looking for new things to learn.
           </Text>
           <Text
             css={{
