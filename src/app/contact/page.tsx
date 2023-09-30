@@ -6,6 +6,9 @@ import { css } from "@/styled-system/css";
 import { SlideInState } from "@/utils/animations/slideIn";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
+import { Controller, useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { IContactSchemaOutput, contactSchema } from "@/form/schema";
 
 export default function Contact() {
   const { contactEnter, mouseLeave } = useTrailerMouse();
@@ -21,6 +24,18 @@ export default function Contact() {
       opacity: 0,
     }),
   };
+
+  const {
+    handleSubmit,
+    control,
+    formState: { errors },
+  } = useForm({
+    resolver: zodResolver(contactSchema),
+  });
+
+  function sendEmail(data: IContactSchemaOutput) {
+    console.log(data);
+  }
 
   return (
     <>
@@ -52,10 +67,17 @@ export default function Contact() {
             variants={slideIn}
             transition={{ delay: 0.2 }}
           >
-            <Form.Input
+            <Controller
               name="name"
-              label="What's your name ?"
-              placeholder="Your name"
+              control={control}
+              render={({ field }) => (
+                <Form.Input
+                  label="What's your name ?"
+                  placeholder="Your name"
+                  error={!!errors.name}
+                  {...field}
+                />
+              )}
             />
           </motion.div>
 
@@ -65,11 +87,18 @@ export default function Contact() {
             variants={slideIn}
             transition={{ delay: 0.4 }}
           >
-            <Form.Input
+            <Controller
               name="email"
-              type="email"
-              label="What's your email ?"
-              placeholder="Your email"
+              control={control}
+              render={({ field }) => (
+                <Form.Input
+                  type="email"
+                  label="What's your email ?"
+                  placeholder="Your email"
+                  error={!!errors.email}
+                  {...field}
+                />
+              )}
             />
           </motion.div>
 
@@ -79,10 +108,17 @@ export default function Contact() {
             variants={slideIn}
             transition={{ delay: 0.6 }}
           >
-            <Form.Input
+            <Controller
               name="phone"
-              label="What's your phone number ?"
-              placeholder="Your phone number"
+              control={control}
+              render={({ field }) => (
+                <Form.Input
+                  label="What's your phone number ?"
+                  placeholder="Your phone number"
+                  error={!!errors.number}
+                  {...field}
+                />
+              )}
             />
           </motion.div>
 
@@ -92,10 +128,17 @@ export default function Contact() {
             variants={slideIn}
             transition={{ delay: 0.8 }}
           >
-            <Form.Textarea
-              name="about"
-              label="Tell me more about your project*"
-              placeholder="Describe it as you can"
+            <Controller
+              name="description"
+              control={control}
+              render={({ field }) => (
+                <Form.Textarea
+                  label="Tell me more about your project*"
+                  placeholder="Describe it as you can"
+                  error={!!errors.description}
+                  {...field}
+                />
+              )}
             />
           </motion.div>
 
@@ -109,6 +152,7 @@ export default function Contact() {
             <Form.Submit
               onMouseEnter={contactEnter}
               onMouseLeave={mouseLeave}
+              onClick={handleSubmit(sendEmail as any)}
               type="button"
               style={{ marginTop: "2rem", width: "100%" }}
             >
