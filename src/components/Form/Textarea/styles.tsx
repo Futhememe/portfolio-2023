@@ -35,4 +35,17 @@ export const Input = styled("textarea", {
 
     transition: "0.3",
   },
+  variants: {
+    variant: {
+      error: {
+        border: "2px solid #DC2626",
+      },
+      default: {
+        border: "2px solid #1D1D1D",
+      },
+    },
+  },
+  defaultVariants: {
+    variant: "default",
+  },
 });

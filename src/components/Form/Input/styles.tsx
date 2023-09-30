@@ -11,6 +11,28 @@ export const FormField = styled(Form.Field, {
   },
 });
 
+export const FormLabel = styled(Form.Label, {
+  base: {
+    fontFamily: "body",
+    color: "text",
+    fontSize: "1rem",
+    fontWeight: 500,
+  },
+  variants: {
+    variant: {
+      error: {
+        color: "red.600",
+      },
+      default: {
+        color: "text",
+      },
+    },
+  },
+  defaultVariants: {
+    variant: "default",
+  },
+});
+
 export const Input = styled("input", {
   base: {
     display: "flex",
@@ -21,7 +43,6 @@ export const Input = styled("input", {
     gap: " 0.625rem",
     alignSelf: "stretch",
     borderRadius: "0.5rem",
-    border: "2px solid #1D1D1D",
 
     bgColor: "transparent",
 
@@ -33,5 +54,18 @@ export const Input = styled("input", {
     },
 
     transition: "0.3",
+  },
+  variants: {
+    variant: {
+      error: {
+        border: "2px solid #DC2626",
+      },
+      default: {
+        border: "2px solid #1D1D1D",
+      },
+    },
+  },
+  defaultVariants: {
+    variant: "default",
   },
 });

@@ -1,7 +1,7 @@
 import { Text } from "@/components/Typograph";
 import * as Form from "@radix-ui/react-form";
 import { DetailedHTMLProps, InputHTMLAttributes } from "react";
-import { FormField, Input as StyledInput } from "./styles";
+import { FormField, FormLabel, Input as StyledInput } from "./styles";
 
 interface IInput
   extends DetailedHTMLProps<
@@ -10,16 +10,15 @@ interface IInput
   > {
   name: string;
   label?: string;
+  error?: boolean;
 }
 
-export const Input = ({ name, label = "", ...rest }: IInput) => {
+export const Input = ({ name, label = "", error = false, ...rest }: IInput) => {
   return (
     <FormField name={name}>
-      <Form.Label asChild>
-        <Text css={{ fontSize: "1rem", fontWeight: 500 }}>{label}</Text>
-      </Form.Label>
+      <FormLabel variant={error ? "error" : "default"}>{label}</FormLabel>
       <Form.Control asChild>
-        <StyledInput {...rest} />
+        <StyledInput variant={error ? "error" : "default"} {...rest} />
       </Form.Control>
     </FormField>
   );
