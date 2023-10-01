@@ -1,16 +1,25 @@
 "use client";
+import * as RadixToast from "@radix-ui/react-toast";
 import { Form } from "@/components/Form";
 import { Display } from "@/components/Typograph";
 import { useTrailerMouse } from "@/hooks/useTrailerMouse";
 import { css } from "@/styled-system/css";
 import { SlideInState } from "@/utils/animations/slideIn";
 import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Controller, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { IContactSchemaOutput, contactSchema } from "@/form/schema";
+import { Toast } from "@/components/Toast";
 
 export default function Contact() {
+  const [open, setOpen] = useState<boolean>(false);
+  const timerRef = useRef(0);
+
+  useEffect(() => {
+    return () => clearTimeout(timerRef.current);
+  }, []);
+
   const { contactEnter, mouseLeave } = useTrailerMouse();
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
@@ -33,12 +42,21 @@ export default function Contact() {
     resolver: zodResolver(contactSchema),
   });
 
+  function openToast() {
+    setOpen(false);
+    window.clearTimeout(timerRef.current);
+    timerRef.current = window.setTimeout(() => {
+      setOpen(true);
+    }, 100);
+  }
+
   function sendEmail(data: IContactSchemaOutput) {
-    console.log(data);
+    openToast();
   }
 
   return (
-    <>
+    <RadixToast.Provider swipeDirection="right">
+      <Toast open={open} onOpenChange={setOpen} />
       {/* <AnimatedOverlay.Contact /> */}
       <div
         ref={ref}
@@ -161,6 +179,6 @@ export default function Contact() {
           </motion.div>
         </Form.Root>
       </div>
-    </>
+    </RadixToast.Provider>
   );
 }
