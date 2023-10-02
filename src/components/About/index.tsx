@@ -91,7 +91,7 @@ export const About = () => {
           <div
             onMouseEnter={linkEnter}
             onMouseLeave={mouseLeave}
-            className={css({ maxW: "calc(114px + 25px)" })}
+            className={css({ maxW: "calc(114px + 40px)" })}
           >
             <LinkButton
               onClick={() => {
