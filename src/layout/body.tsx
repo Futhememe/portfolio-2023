@@ -1,3 +1,5 @@
+import { Footer } from "@/components/Footer";
+import { TrailerMouseProvider } from "@/hooks/useTrailerMouse";
 import { css } from "@/styled-system/css";
 import { ReactNode } from "react";
 
@@ -7,7 +9,7 @@ interface IBody {
 
 export const Body = ({ children }: IBody) => {
   return (
-    <body
+    <div
       className={css({
         display: "flex",
         flexDir: "column",
@@ -17,14 +19,15 @@ export const Body = ({ children }: IBody) => {
         minH: "100vh",
         margin: 0,
         p: 0,
-        // overflowX: "hidden",
-        // overflowY: "scroll",
 
         bgColor: "background",
         position: "relative",
       })}
     >
-      {children}
-    </body>
+      <TrailerMouseProvider>
+        {children}
+        <Footer />
+      </TrailerMouseProvider>
+    </div>
   );
 };

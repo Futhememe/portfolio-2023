@@ -23,7 +23,6 @@ const anim = (variants: any) => {
 
 interface ICurve {
   children: ReactNode | ReactNode[];
-  backgroundColor: string;
 }
 
 interface ISVG {
@@ -31,7 +30,7 @@ interface ISVG {
   width: number;
 }
 
-export default function Curve({ children, backgroundColor }: ICurve) {
+export default function Curve({ children }: ICurve) {
   const router = useRouter();
 
   const [dimensions, setDimensions] = useState<ISVG>({

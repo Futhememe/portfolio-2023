@@ -7,6 +7,7 @@ import { About } from "@/components/About";
 import { Skills } from "@/components/Skills";
 import { SelectedWork } from "@/components/SelectedWork";
 import { WorkTogether } from "@/components/WorkTogether";
+import { Body } from "@/layout/body";
 
 export default function Home() {
   useEffect(() => {
@@ -21,13 +22,13 @@ export default function Home() {
   }, []);
 
   return (
-    <>
+    <Body>
       <Header />
       <Hero />
       <About />
       <Skills />
       <SelectedWork />
       <WorkTogether />
-    </>
+    </Body>
   );
 }
