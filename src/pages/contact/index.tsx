@@ -9,8 +9,8 @@ import { motion, useInView } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import { Controller, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { IContactSchemaOutput, contactSchema } from "@/form/schema";
 import { Toast } from "@/components/Toast";
+import { IContactSchemaOutput, contactSchema } from "@/schema";
 
 export default function Contact() {
   const [open, setOpen] = useState<boolean>(false);
