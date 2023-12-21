@@ -7,7 +7,7 @@ interface IBody {
 
 export const Body = ({ children }: IBody) => {
   return (
-    <body
+    <div
       className={css({
         display: "flex",
         flexDir: "column",
@@ -23,6 +23,6 @@ export const Body = ({ children }: IBody) => {
       })}
     >
       {children}
-    </body>
+    </div>
   );
 };
