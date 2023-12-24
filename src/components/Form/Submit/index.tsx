@@ -11,6 +11,7 @@ interface ISubmit
 export const Submit = ({ ...rest }: ISubmit) => {
   return (
     <Form.Submit asChild>
+      {/* @ts-ignore */}
       <Button {...rest} />
     </Form.Submit>
   );
