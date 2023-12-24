@@ -19,6 +19,7 @@ export const Textarea = ({ name, label = "", error, ...rest }: IInput) => {
     <FormField name={name}>
       <FormLabel variant={error ? "error" : "default"}>{label}</FormLabel>
       <Form.Control asChild>
+        {/* @ts-ignore */}
         <StyledInput
           variant={error ? "error" : "default"}
           resize="vertical"

@@ -18,6 +18,7 @@ export const Input = ({ name, label = "", error = false, ...rest }: IInput) => {
     <FormField name={name}>
       <FormLabel variant={error ? "error" : "default"}>{label}</FormLabel>
       <Form.Control asChild>
+        {/* @ts-ignore */}
         <StyledInput variant={error ? "error" : "default"} {...rest} />
       </Form.Control>
     </FormField>
