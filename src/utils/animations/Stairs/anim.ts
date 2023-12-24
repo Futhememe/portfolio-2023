@@ -29,13 +29,10 @@ export const opacity = {
   initial: {
       opacity: 0.5
   },
-
   enter: {
       opacity: 0
   },
-
   exit: {
       opacity: 0.5,
   }
-
 }
