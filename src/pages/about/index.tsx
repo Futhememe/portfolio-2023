@@ -15,7 +15,7 @@ import { Body } from "@/layout/body";
 const workExperiences = [
   {
     company: "Hospital Albert Einstein",
-    roles: ["Web developer"],
+    roles: ["Software engineer"],
     timeline: "MAR 2022 - PRESENT",
   },
   {

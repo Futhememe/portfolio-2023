@@ -1,5 +1,6 @@
 import { SkillTag } from "@/components/SkillSet/styles";
 import { Text } from "@/components/Typograph";
+import { useTrailerMouse } from "@/hooks/useTrailerMouse";
 import { css } from "@/styled-system/css";
 import { styled } from "@/styled-system/jsx";
 
@@ -14,6 +15,8 @@ export const ExperienceLine = ({
   roles,
   timeline,
 }: IExperienceLine) => {
+  const { workEnter, mouseLeave } = useTrailerMouse();
+
   return (
     <div
       className={css({
@@ -22,6 +25,8 @@ export const ExperienceLine = ({
         justifyContent: "space-between",
         w: "100%",
       })}
+      onMouseEnter={workEnter}
+      onMouseLeave={mouseLeave}
     >
       <div className={css({ display: "flex", flexDir: "column" })}>
         <Text css={{ fontSize: ["1.5rem", "2rem"], fontWeight: 500 }}>
