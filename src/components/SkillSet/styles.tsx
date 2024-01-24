@@ -17,4 +17,18 @@ export const SkillTag = styled(motion.div, {
 
     color: "background",
   },
+  variants: {
+    variant: {
+      default: {},
+      border: {
+        backgroundColor: "background",
+        color: "darkbackground",
+        border: "1px solid #1d1d1d",
+        p: "0.25rem 0.5rem",
+      },
+    },
+  },
+  defaultVariants: {
+    variant: "default",
+  },
 });
