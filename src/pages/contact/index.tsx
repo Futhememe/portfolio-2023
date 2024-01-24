@@ -12,6 +12,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { Toast } from "@/components/Toast";
 import { IContactSchemaOutput, contactSchema } from "@/schema";
 import { Body } from "@/layout/body";
+import Head from "next/head";
 
 export default function Contact() {
   const [open, setOpen] = useState<boolean>(false);
@@ -57,6 +58,9 @@ export default function Contact() {
 
   return (
     <Body>
+      <Head>
+        <title>Gustavo Souza | Contact</title>
+      </Head>
       <RadixToast.Provider swipeDirection="right">
         <Toast open={open} onOpenChange={setOpen} />
         {/* <AnimatedOverlay.Contact /> */}

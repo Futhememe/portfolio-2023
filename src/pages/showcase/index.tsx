@@ -3,10 +3,14 @@ import { SkillTag } from "@/components/SkillSet/styles";
 import { Display } from "@/components/Typograph";
 import { Body } from "@/layout/body";
 import { css } from "@/styled-system/css";
+import Head from "next/head";
 
 export default function Showcase() {
   return (
     <Body>
+      <Head>
+        <title>Gustavo Souza | Showcase</title>
+      </Head>
       <div
         className={css({
           display: "flex",

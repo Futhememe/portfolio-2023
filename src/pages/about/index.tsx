@@ -11,6 +11,7 @@ import { ExperienceLine } from "@/components/About/ExperienceLine";
 import { useInView, motion } from "framer-motion";
 import { SlideInState, slideIn } from "@/utils/animations/slideIn";
 import { Body } from "@/layout/body";
+import Head from "next/head";
 
 const workExperiences = [
   {
@@ -47,6 +48,9 @@ export default function About() {
 
   return (
     <Body>
+      <Head>
+        <title>Gustavo Souza | About</title>
+      </Head>
       <div
         ref={aboutRef}
         className={css({

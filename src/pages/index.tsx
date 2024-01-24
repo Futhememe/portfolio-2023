@@ -8,6 +8,7 @@ import { Skills } from "@/components/Skills";
 import { SelectedWork } from "@/components/SelectedWork";
 import { WorkTogether } from "@/components/WorkTogether";
 import { Body } from "@/layout/body";
+import Head from "next/head";
 
 export default function Home() {
   useEffect(() => {
@@ -23,6 +24,9 @@ export default function Home() {
 
   return (
     <Body>
+      <Head>
+        <title>Gustavo Souza | Home</title>
+      </Head>
       <Header />
       <Hero />
       <About />

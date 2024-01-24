@@ -19,6 +19,10 @@ export default function Document() {
           href="https://api.fontshare.com/v2/css?f[]=satoshi@900,700,500,701,501,401,901,400&f[]=cabinet-grotesk@800,500,700,400,300&display=swap"
           rel="stylesheet"
         />
+        <meta
+          name="description"
+          content="Hello, I'm Gustavo an creative designer and developer"
+        />
       </Head>
       <body>
         <Main />
