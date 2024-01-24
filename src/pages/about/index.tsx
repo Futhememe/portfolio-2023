@@ -25,7 +25,7 @@ const workExperiences = [
   },
   {
     company: "Visual Mix",
-    roles: ["Junior developer"],
+    roles: ["Junior developer", "Designer"],
     timeline: "AGO 2019 - ABR 2021",
   },
 ];
