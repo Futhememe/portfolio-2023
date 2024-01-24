@@ -1,7 +1,5 @@
 import { Footer } from "@/components/Footer";
-import { TrailerMouseProvider } from "@/hooks/useTrailerMouse";
 import { css } from "@/styled-system/css";
-import Inner from "@/utils/animations/Inner";
 import Stairs from "@/utils/animations/Stairs";
 import { ReactNode } from "react";
 

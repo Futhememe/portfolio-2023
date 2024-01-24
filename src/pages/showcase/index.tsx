@@ -12,6 +12,7 @@ export default function Showcase() {
           display: "flex",
           flexDir: "column",
           alignItems: "center",
+          justifyContent: "center",
           w: "100%",
           p: ["4rem 1rem", "4rem"],
           minH: "100vh",
