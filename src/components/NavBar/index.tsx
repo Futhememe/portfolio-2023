@@ -7,7 +7,7 @@ export const Navbar = styled("div", {
     padding: "0.5rem",
     gap: ["0.5rem", "1rem"],
 
-    borderRadius: "1rem",
+    borderRadius: ["1rem 1rem 0 0", "1rem", "1rem"],
     bgColor: "darkbackground",
 
     position: "sticky",

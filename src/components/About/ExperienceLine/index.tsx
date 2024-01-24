@@ -21,7 +21,7 @@ export const ExperienceLine = ({
     <div
       className={css({
         display: "flex",
-        alignItems: "center",
+        alignItems: ["flex-end", "center"],
         justifyContent: "space-between",
         w: "100%",
       })}
@@ -46,7 +46,10 @@ export const ExperienceLine = ({
           ))}
         </div>
       </div>
-      <Text css={{ fontSize: ["0.875rem", "1rem"] }}>{timeline}</Text>
+      <Text css={{ display: ["none", "flex"], fontSize: ["0.875rem", "1rem"] }}>
+        {timeline}
+      </Text>
+      {/* <Link css={{ w: ["auto", "0px"], overflow: "hidden" }}>read more</Link> */}
     </div>
   );
 };
@@ -54,5 +57,21 @@ export const ExperienceLine = ({
 export const Tag = styled(SkillTag, {
   base: {
     fontSize: "0.75rem",
+  },
+});
+
+export const Link = styled("button", {
+  base: {
+    // all: "unset",
+    alignItems: "center",
+    fontSize: "1rem",
+    color: "text",
+    fontFamily: "body",
+    fontWeight: 501,
+    gap: "0.5rem",
+
+    textDecoration: "underline",
+
+    cursor: "pointer",
   },
 });
