@@ -35,7 +35,9 @@ export const ExperienceLine = ({
           })}
         >
           {roles?.map((role) => (
-            <Tag key={role}>{role}</Tag>
+            <Tag variant="border" key={role}>
+              {role}
+            </Tag>
           ))}
         </div>
       </div>
@@ -46,6 +48,6 @@ export const ExperienceLine = ({
 
 export const Tag = styled(SkillTag, {
   base: {
-    fontSize: ["0.75rem", "0.875rem"],
+    fontSize: "0.75rem",
   },
 });
