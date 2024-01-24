@@ -10,6 +10,7 @@ interface ITrailerMouseContext {
   linkEnter: () => void;
   transparentEnter: () => void;
   mouseLeave: () => void;
+  workEnter: () => void;
 }
 
 const TrailerMouseContext = createContext<ITrailerMouseContext | null>(null);
@@ -21,7 +22,7 @@ interface ITrailerMouseProvider {
 export const TrailerMouseProvider = ({ children }: ITrailerMouseProvider) => {
   const [cursorText, setCursorText] = useState<string | ReactNode>("");
   const [cursorVariant, setCursorVariant] = useState<
-    "default" | "project" | "contact" | "link" | "transparent"
+    "default" | "project" | "contact" | "link" | "transparent" | "work"
   >("default");
   const { x, y }: any = useMousePosition();
 
@@ -47,6 +48,18 @@ export const TrailerMouseProvider = ({ children }: ITrailerMouseProvider) => {
       height: 80,
       width: 80,
       fontSize: "18px",
+      x: x - 32,
+      y: y - 32,
+    },
+    work: {
+      opacity: 1,
+      backgroundColor: "#1d1d1d",
+      color: "#F1ECE4",
+      height: 80,
+      width: 80,
+      fontSize: "14px",
+      cursor: "none",
+      textWrap: "nowrap",
       x: x - 32,
       y: y - 32,
     },
@@ -89,7 +102,7 @@ export const TrailerMouseProvider = ({ children }: ITrailerMouseProvider) => {
   };
 
   function projectEnter() {
-    setCursorText("View");
+    setCursorText("view");
     setCursorVariant("project");
   }
 
@@ -108,6 +121,11 @@ export const TrailerMouseProvider = ({ children }: ITrailerMouseProvider) => {
     setCursorVariant("transparent");
   }
 
+  function workEnter() {
+    setCursorText("read more");
+    setCursorVariant("work");
+  }
+
   function mouseLeave() {
     setCursorText("");
     setCursorVariant("default");
@@ -121,10 +139,11 @@ export const TrailerMouseProvider = ({ children }: ITrailerMouseProvider) => {
         linkEnter,
         transparentEnter,
         mouseLeave,
+        workEnter,
       }}
     >
       <motion.div
-        variants={variants}
+        variants={variants as any}
         className={css({
           opacity: [0, 1],
           display: ["none", "flex"],
@@ -141,6 +160,7 @@ export const TrailerMouseProvider = ({ children }: ITrailerMouseProvider) => {
           borderRadius: "200px",
           pointerEvents: "none",
           color: "#fff",
+          fontFamily: "body",
           textAlign: "center",
           fontSize: "16px",
         })}
