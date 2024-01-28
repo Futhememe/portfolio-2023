@@ -25,8 +25,8 @@ export const ExperienceLine = ({
         justifyContent: "space-between",
         w: "100%",
       })}
-      onMouseEnter={workEnter}
-      onMouseLeave={mouseLeave}
+      // onMouseEnter={workEnter}
+      // onMouseLeave={mouseLeave}
     >
       <div className={css({ display: "flex", flexDir: "column" })}>
         <Text css={{ fontSize: ["1.5rem", "2rem"], fontWeight: 500 }}>
