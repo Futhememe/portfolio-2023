@@ -3,7 +3,7 @@
 import { css } from "@/styled-system/css";
 import { CopyrightLogo, WhiteLogo } from "../Assets/logo";
 import { Text } from "../Typograph";
-import { InstagramLogo, LinkedinLogo } from "@phosphor-icons/react";
+import { GithubLogo, InstagramLogo, LinkedinLogo } from "@phosphor-icons/react";
 import { MenuButton, Navbar } from "../NavBar";
 import MagneticElement from "../MagneticElement";
 import { usePathname, useRouter } from "next/navigation";
@@ -23,6 +23,10 @@ export const Footer = () => {
     window
       .open("https://www.linkedin.com/in/gustavo-silva-261415148/", "_blank")
       ?.focus();
+  }
+
+  function openGithub() {
+    window.open("https://github.com/Futhememe", "_blank")?.focus();
   }
 
   return (
@@ -70,6 +74,9 @@ export const Footer = () => {
               </MagneticElement>
               <MagneticElement>
                 <LinkedinLogo size={32} onClick={openLinkedin} />
+              </MagneticElement>
+              <MagneticElement>
+                <GithubLogo size={32} onClick={openGithub} />
               </MagneticElement>
             </div>
             <Text css={{ color: "background" }}>gustavosouza@skiff.com</Text>
