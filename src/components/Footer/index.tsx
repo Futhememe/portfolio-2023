@@ -15,6 +15,16 @@ export const Footer = () => {
   const pathname = usePathname();
   const { transparentEnter, mouseLeave } = useTrailerMouse();
 
+  function openInstagram() {
+    window.open("https://www.instagram.com/fuh.jpeg/", "_blank")?.focus();
+  }
+
+  function openLinkedin() {
+    window
+      .open("https://www.linkedin.com/in/gustavo-silva-261415148/", "_blank")
+      ?.focus();
+  }
+
   return (
     <>
       <footer
@@ -56,10 +66,10 @@ export const Footer = () => {
           >
             <div className={css({ display: "flex", gap: "1rem" })}>
               <MagneticElement>
-                <InstagramLogo size={32} />
+                <InstagramLogo size={32} onClick={openInstagram} />
               </MagneticElement>
               <MagneticElement>
-                <LinkedinLogo size={32} />
+                <LinkedinLogo size={32} onClick={openLinkedin} />
               </MagneticElement>
             </div>
             <Text css={{ color: "background" }}>gustavosouza@skiff.com</Text>
