@@ -22,7 +22,7 @@ export default function Contact() {
     return () => clearTimeout(timerRef.current);
   }, []);
 
-  const { contactEnter, mouseLeave } = useTrailerMouse();
+  const { contactEnter, mouseLeave, transparentEnter } = useTrailerMouse();
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
 
@@ -90,13 +90,15 @@ export default function Contact() {
               initial={SlideInState.OUTOFVIEW}
               variants={slideIn}
               transition={{ delay: 0.2 }}
+              onMouseEnter={transparentEnter}
+              onMouseLeave={mouseLeave}
             >
               <Controller
                 name="name"
                 control={control}
                 render={({ field }) => (
                   <Form.Input
-                    label="What's your name ?"
+                    label="What's your name ?*"
                     placeholder="Your name"
                     error={!!errors.name}
                     {...field}
@@ -110,6 +112,8 @@ export default function Contact() {
               initial={SlideInState.OUTOFVIEW}
               variants={slideIn}
               transition={{ delay: 0.4 }}
+              onMouseEnter={transparentEnter}
+              onMouseLeave={mouseLeave}
             >
               <Controller
                 name="email"
@@ -117,7 +121,7 @@ export default function Contact() {
                 render={({ field }) => (
                   <Form.Input
                     type="email"
-                    label="What's your email ?"
+                    label="What's your email ?*"
                     placeholder="Your email"
                     error={!!errors.email}
                     {...field}
@@ -131,6 +135,8 @@ export default function Contact() {
               initial={SlideInState.OUTOFVIEW}
               variants={slideIn}
               transition={{ delay: 0.6 }}
+              onMouseEnter={transparentEnter}
+              onMouseLeave={mouseLeave}
             >
               <Controller
                 name="phone"
@@ -151,6 +157,8 @@ export default function Contact() {
               initial={SlideInState.OUTOFVIEW}
               variants={slideIn}
               transition={{ delay: 0.8 }}
+              onMouseEnter={transparentEnter}
+              onMouseLeave={mouseLeave}
             >
               <Controller
                 name="description"
