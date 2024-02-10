@@ -86,7 +86,7 @@ export const TrailerMouseProvider = ({ children }: ITrailerMouseProvider) => {
       y: y - 26,
     },
     transparent: {
-      opacity: 0,
+      opacity: [1, 0],
       backgroundColor: "transparent",
       height: 16,
       width: 16,
