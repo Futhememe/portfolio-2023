@@ -145,6 +145,7 @@ export default function Contact() {
                   <Form.Input
                     label="What's your phone number ?"
                     placeholder="Your phone number"
+                    type="number"
                     error={!!errors.number}
                     {...field}
                   />

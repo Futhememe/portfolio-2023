@@ -54,6 +54,14 @@ export const Input = styled("input", {
     },
 
     transition: "0.3",
+    "&::-webkit-inner-spin-button": {
+      WebkitAppearance: "none",
+      margin: "0",
+    },
+    "&::-webkit-outer-spin-button": {
+      WebkitAppearance: "none",
+      margin: "0",
+    },
   },
   variants: {
     variant: {
