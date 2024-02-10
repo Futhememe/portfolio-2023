@@ -61,7 +61,7 @@ export const Hero = () => {
           transition={{ delay: 0.6 }}
         >
           <Display css={{ fontSize: ["2.5rem", "4rem"], lineHeight: "tight" }}>
-            an creative designer
+            a creative designer
           </Display>
         </motion.div>
         <motion.div
