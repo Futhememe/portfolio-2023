@@ -13,7 +13,9 @@ export const Toast = ({ ...rest }: IToast) => {
       <ToastRoot {...rest}>
         <ToastTitle>
           <CheckCircle size={24} />
-          <Text css={{ color: "background" }}>Email enviado com sucesso</Text>
+          <Text css={{ color: "background" }}>
+            Sua mensagem foi enviada com sucesso
+          </Text>
         </ToastTitle>
         <RadixToast.Action asChild altText="Goto schedule to undo">
           <CloseButton>
