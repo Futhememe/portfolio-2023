@@ -13,8 +13,23 @@ import { Toast } from "@/components/Toast";
 import { IContactSchemaOutput, contactSchema } from "@/schema";
 import { Body } from "@/layout/body";
 import Head from "next/head";
+import { useMutation } from "@tanstack/react-query";
+import { api } from "@/lib/axios";
 
 export default function Contact() {
+  const {
+    mutate: sendMessage,
+    isSuccess,
+    isPending,
+  } = useMutation({
+    mutationKey: ["message"],
+    mutationFn: async (request: IContactSchemaOutput) => {
+      const { data } = await api.post("/sendmessage", {
+        ...request,
+      });
+      return data;
+    },
+  });
   const [open, setOpen] = useState<boolean>(false);
   const timerRef = useRef(0);
 
@@ -53,8 +68,14 @@ export default function Contact() {
   }
 
   function sendEmail(data: IContactSchemaOutput) {
-    openToast();
+    sendMessage(data);
   }
+
+  useEffect(() => {
+    if (isSuccess) {
+      openToast();
+    }
+  }, [isSuccess]);
 
   return (
     <Body>
@@ -187,6 +208,7 @@ export default function Contact() {
                 onMouseLeave={mouseLeave}
                 onClick={handleSubmit(sendEmail as any)}
                 type="button"
+                disabled={isPending}
                 style={{ marginTop: "2rem", width: "100%" }}
               >
                 Send
