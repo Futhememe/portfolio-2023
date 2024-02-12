@@ -9,7 +9,7 @@ interface IToast extends RadixToast.ToastProps {}
 
 export const Toast = ({ ...rest }: IToast) => {
   return (
-    <AnimatePresence>
+    <AnimatePresence key={rest.key}>
       <ToastRoot {...rest}>
         <ToastTitle>
           <CheckCircle size={24} />
