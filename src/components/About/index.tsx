@@ -1,6 +1,6 @@
 import { css } from "@/styled-system/css";
 import { Display, Text } from "../Typograph";
-import photo from "../../assets/myPhoto.jpeg";
+import photo from "../../assets/myPhoto.jpg";
 import Image from "next/image";
 import { LinkButton } from "../LinkButton";
 import { useRef } from "react";

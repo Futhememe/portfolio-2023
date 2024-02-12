@@ -1,6 +1,6 @@
 "use client";
 
-import photo from "../../assets/myPhoto.jpeg";
+import photo from "../../assets/myPhoto.jpg";
 import Image from "next/image";
 import { Display, Text } from "@/components/Typograph";
 import { LinkButton } from "@/components/LinkButton";
