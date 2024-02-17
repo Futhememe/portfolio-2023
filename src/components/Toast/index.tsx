@@ -4,17 +4,23 @@ import { CloseButton, ToastRoot, ToastTitle, ToastViewport } from "./styles";
 import { CheckCircle, X } from "@phosphor-icons/react";
 import { Text } from "../Typograph";
 
-interface IToast extends RadixToast.ToastProps {}
+interface IToast extends RadixToast.ToastProps {
+  variant: "success" | "error";
+  message: string;
+}
 
-export const Toast = ({ ...rest }: IToast) => {
+export const Toast = ({ variant, message, ...rest }: IToast) => {
+  const icons = {
+    success: <CheckCircle size={24} />,
+    error: <X size={24} />,
+  };
+
   return (
     <>
       <ToastRoot {...rest}>
         <ToastTitle>
-          <CheckCircle size={24} />
-          <Text css={{ color: "background" }}>
-            Sua mensagem foi enviada com sucesso
-          </Text>
+          {icons[variant]}
+          <Text css={{ color: "background" }}>{message}</Text>
         </ToastTitle>
         <RadixToast.Action asChild altText="Goto schedule to undo">
           <CloseButton>

@@ -21,6 +21,7 @@ export default function Contact() {
     mutate: sendMessage,
     isSuccess,
     isPending,
+    isError: isFetchError,
   } = useMutation({
     mutationKey: ["message"],
     mutationFn: async (request: IContactSchemaOutput) => {
@@ -31,6 +32,7 @@ export default function Contact() {
     },
   });
   const [open, setOpen] = useState<boolean>(false);
+  const [isError, setIsError] = useState<boolean>(false);
   const timerRef = useRef(0);
 
   useEffect(() => {
@@ -67,6 +69,14 @@ export default function Contact() {
     }, 100);
   }
 
+  function openError() {
+    setIsError(false);
+    window.clearTimeout(timerRef.current);
+    timerRef.current = window.setTimeout(() => {
+      setIsError(true);
+    }, 100);
+  }
+
   function sendEmail(data: IContactSchemaOutput) {
     sendMessage(data);
   }
@@ -77,13 +87,30 @@ export default function Contact() {
     }
   }, [isSuccess]);
 
+  useEffect(() => {
+    if (isFetchError) {
+      openError();
+    }
+  }, [isFetchError]);
+
   return (
     <Body>
       <Head>
         <title>Gustavo Souza | Contact</title>
       </Head>
       <RadixToast.Provider swipeDirection="right">
-        <Toast open={open} onOpenChange={setOpen} />
+        <Toast
+          open={open}
+          onOpenChange={setOpen}
+          variant="success"
+          message="Sua mensagem foi enviada com sucesso"
+        />
+        <Toast
+          open={isError}
+          onOpenChange={setIsError}
+          variant="error"
+          message="Algo deu errado! Tente novamente"
+        />
         {/* <AnimatedOverlay.Contact /> */}
         <div
           ref={ref}
