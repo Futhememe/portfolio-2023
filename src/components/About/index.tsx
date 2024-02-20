@@ -9,11 +9,19 @@ import { SlideInState, slideIn } from "@/utils/animations/slideIn";
 import { useParallax } from "@/hooks/useParallax";
 import { useTrailerMouse } from "@/hooks/useTrailerMouse";
 import { useRouter } from "next/navigation";
+import { useTranslation } from "react-i18next";
 
 export const About = () => {
   const ref = useRef(null);
   const isAboutInView = useInView(ref, { once: true });
   const { linkEnter, mouseLeave } = useTrailerMouse();
+  const { t: aboutTranslation } = useTranslation("config", {
+    keyPrefix: "about",
+  });
+
+  const { t: genericTranslation } = useTranslation("config", {
+    keyPrefix: "generic",
+  });
 
   const router = useRouter();
 
@@ -45,7 +53,7 @@ export const About = () => {
             fontSize: ["4.5rem", "6rem"],
           }}
         >
-          About me
+          {genericTranslation("about_me")}
         </Display>
       </motion.div>
       <div
@@ -83,10 +91,7 @@ export const About = () => {
           <Text
             css={{ fontSize: "1.25rem", fontWeight: 401, textAlign: "justify" }}
           >
-            Hey, my name is Gustavo. I&apos;m a creative developer and designer
-            living in Brazil with a dream of always helping people, whether
-            it&apos;s with a website for their business, helping you understand
-            technology, or simply assisting you in crossing the street.
+            {aboutTranslation("resume")}
           </Text>
           <div
             onMouseEnter={linkEnter}
@@ -99,7 +104,7 @@ export const About = () => {
                 mouseLeave();
               }}
             >
-              view more here
+              {genericTranslation("view_more")}
             </LinkButton>
           </div>
         </motion.div>

@@ -15,6 +15,7 @@ import { Body } from "@/layout/body";
 import Head from "next/head";
 import { useMutation } from "@tanstack/react-query";
 import { api } from "@/lib/axios";
+import { useTranslation } from "react-i18next";
 
 export default function Contact() {
   const {
@@ -93,10 +94,18 @@ export default function Contact() {
     }
   }, [isFetchError]);
 
+  const { t: contactTranslation } = useTranslation("config", {
+    keyPrefix: "contact",
+  });
+
+  const { t: genericTranslation } = useTranslation("config", {
+    keyPrefix: "generic",
+  });
+
   return (
     <Body>
       <Head>
-        <title>Gustavo Souza | Contact</title>
+        <title>Gustavo Souza | {genericTranslation("contact")}</title>
       </Head>
       <RadixToast.Provider swipeDirection="right">
         <Toast
@@ -130,7 +139,9 @@ export default function Contact() {
             variants={slideIn}
             transition={{ delay: 0 }}
           >
-            <Display css={{ fontSize: ["4.5rem", "6rem"] }}>Contact</Display>
+            <Display css={{ fontSize: ["4.5rem", "6rem"] }}>
+              {genericTranslation("contact")}
+            </Display>
           </motion.div>
           <Form.Root>
             <motion.div
@@ -146,8 +157,8 @@ export default function Contact() {
                 control={control}
                 render={({ field }) => (
                   <Form.Input
-                    label="What's your name ?*"
-                    placeholder="Your name"
+                    label={`${contactTranslation("name")}*`}
+                    placeholder={contactTranslation("name_placeholder")}
                     error={!!errors.name}
                     {...field}
                   />
@@ -169,8 +180,8 @@ export default function Contact() {
                 render={({ field }) => (
                   <Form.Input
                     type="email"
-                    label="What's your email ?*"
-                    placeholder="Your email"
+                    label={`${contactTranslation("email")}*`}
+                    placeholder={contactTranslation("email_placeholder")}
                     error={!!errors.email}
                     {...field}
                   />
@@ -191,8 +202,8 @@ export default function Contact() {
                 control={control}
                 render={({ field }) => (
                   <Form.Input
-                    label="What's your phone number ?"
-                    placeholder="Your phone number"
+                    label={contactTranslation("phone")}
+                    placeholder={contactTranslation("phone_placeholder")}
                     type="number"
                     error={!!errors.number}
                     {...field}
@@ -214,8 +225,8 @@ export default function Contact() {
                 control={control}
                 render={({ field }) => (
                   <Form.Textarea
-                    label="Tell me more about your project*"
-                    placeholder="Describe it as you can"
+                    label={`${contactTranslation("project")}*`}
+                    placeholder={contactTranslation("project_placeholder")}
                     error={!!errors.description}
                     {...field}
                   />
@@ -238,7 +249,7 @@ export default function Contact() {
                 disabled={isPending}
                 style={{ marginTop: "2rem", width: "100%" }}
               >
-                Send
+                {genericTranslation("send")}
               </Form.Submit>
             </motion.div>
           </Form.Root>

@@ -9,11 +9,16 @@ import MagneticElement from "../MagneticElement";
 import { usePathname, useRouter } from "next/navigation";
 import { motion } from "framer-motion";
 import { useTrailerMouse } from "@/hooks/useTrailerMouse";
+import { useTranslation } from "react-i18next";
 
 export const Footer = () => {
   const router = useRouter();
   const pathname = usePathname();
   const { transparentEnter, mouseLeave } = useTrailerMouse();
+
+  const { t } = useTranslation("config", {
+    keyPrefix: "generic",
+  });
 
   function openInstagram() {
     window.open("https://www.instagram.com/fuh.jpeg/", "_blank")?.focus();
@@ -96,7 +101,7 @@ export const Footer = () => {
           })}
         >
           <CopyrightLogo />
-          <Text>Created by Gustavo</Text>
+          <Text>{t("created_by")} Gustavo</Text>
         </div>
       </footer>
       <Navbar onMouseEnter={transparentEnter} onMouseLeave={mouseLeave}>
@@ -104,25 +109,25 @@ export const Footer = () => {
           variant={pathname === "/" ? "selected" : "default"}
           onClick={() => router.push("/")}
         >
-          Home
+          {t("home")}
         </MenuButton>
         <MenuButton
           variant={pathname === "/about" ? "selected" : "default"}
           onClick={() => router.push("/about")}
         >
-          About
+          {t("about")}
         </MenuButton>
         <MenuButton
           variant={pathname === "/showcase" ? "selected" : "default"}
           onClick={() => router.push("/showcase")}
         >
-          Projects
+          {t("projects")}
         </MenuButton>
         <MenuButton
           variant={pathname === "/contact" ? "selected" : "default"}
           onClick={() => router.push("/contact")}
         >
-          Contact
+          {t("contact")}
         </MenuButton>
       </Navbar>
     </>

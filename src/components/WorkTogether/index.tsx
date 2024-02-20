@@ -5,10 +5,15 @@ import { Display, Text } from "../Typograph";
 import { motion } from "framer-motion";
 import { useTrailerMouse } from "@/hooks/useTrailerMouse";
 import { useRouter } from "next/navigation";
+import { useTranslation } from "react-i18next";
 
 export const WorkTogether = () => {
   const { contactEnter, mouseLeave } = useTrailerMouse();
   const router = useRouter();
+
+  const { t } = useTranslation("config", {
+    keyPrefix: "generic",
+  });
 
   return (
     <div
@@ -34,7 +39,7 @@ export const WorkTogether = () => {
         <Display
           css={{ fontSize: ["3.75rem", "5rem", "6rem"], lineHeight: "tight" }}
         >
-          Let{"'"}s
+          {t("let")}
         </Display>
         <motion.div
           className={css({
@@ -48,7 +53,7 @@ export const WorkTogether = () => {
         <Display
           css={{ fontSize: ["3.75rem", "5rem", "6rem"], lineHeight: "tight" }}
         >
-          work
+          {t("work")}
         </Display>
 
         <Text
@@ -60,7 +65,7 @@ export const WorkTogether = () => {
             left: ["1rem", "-4rem"],
           }}
         >
-          Say hi
+          {t("hi")}
         </Text>
         <Text
           css={{
@@ -71,7 +76,7 @@ export const WorkTogether = () => {
             bottom: ["5rem", "-4rem"],
           }}
         >
-          Share your ideas
+          {t("share")}
         </Text>
         <Text
           css={{
@@ -82,13 +87,13 @@ export const WorkTogether = () => {
             bottom: "-7rem",
           }}
         >
-          Let{"'"}s chat
+          {t("chat")}
         </Text>
       </div>
       <Display
         css={{ fontSize: ["3.75rem", "5rem", "6rem"], lineHeight: "tight" }}
       >
-        together
+        {t("together")}
       </Display>
 
       <motion.div
@@ -102,7 +107,7 @@ export const WorkTogether = () => {
             router.push("/contact");
           }}
         >
-          get in touch
+          {t("get_in_touch")}
         </LinkButton>
       </motion.div>
     </div>

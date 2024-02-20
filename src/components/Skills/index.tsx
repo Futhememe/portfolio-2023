@@ -4,6 +4,7 @@ import { Display } from "../Typograph";
 import { SkillSet } from "../SkillSet";
 import { useScroll, motion, useTransform, useMotionValue } from "framer-motion";
 import { useRef } from "react";
+import { useTranslation } from "react-i18next";
 
 export const Skills = () => {
   const projectSkillRef = useRef(null);
@@ -102,6 +103,10 @@ export const Skills = () => {
     [0, 1, 1, 0]
   );
 
+  const { t: skillsTranslation } = useTranslation("config", {
+    keyPrefix: "skills",
+  });
+
   return (
     <motion.div
       className={css({
@@ -121,7 +126,7 @@ export const Skills = () => {
           }}
           // style={{ opacity }}
         >
-          What I do ?
+          {skillsTranslation("title")}
         </Display>
       </motion.div>
       <motion.div
@@ -137,13 +142,13 @@ export const Skills = () => {
         })}
       >
         <SkillSet
-          title="Product Discovery"
+          title={skillsTranslation("product.title")}
           tags={[
-            "User flows",
-            "Funcionalities analysis",
-            "Visual research",
-            "Site architecture",
-            "Wireframe",
+            skillsTranslation("product.user_flow"),
+            skillsTranslation("product.func"),
+            skillsTranslation("product.research"),
+            skillsTranslation("product.site_arc"),
+            skillsTranslation("product.wireframe"),
           ]}
           displayStyle={{ scale: projectScaleIn, opacity: projectFadeIn }}
           tagStyle={{ scale: projectTagScaleIn, opacity: projectTagFadeIn }}
@@ -162,13 +167,13 @@ export const Skills = () => {
         })}
       >
         <SkillSet
-          title="Design"
+          title={skillsTranslation("design.title")}
           tags={[
-            "Web design",
-            "Design system",
-            "Mobile apps",
-            "Animations",
-            "Prototyping",
+            skillsTranslation("design.web"),
+            skillsTranslation("design.design_system"),
+            skillsTranslation("design.mobile"),
+            skillsTranslation("design.animation"),
+            skillsTranslation("design.prototyping"),
           ]}
           displayStyle={{ scale: designScaleIn, opacity: designFadeIn }}
           tagStyle={{ scale: designTagScaleIn, opacity: designTagFadeIn }}
@@ -187,13 +192,13 @@ export const Skills = () => {
         })}
       >
         <SkillSet
-          title="Development"
+          title={skillsTranslation("development.title")}
           tags={[
-            "Web development",
-            "E-commerce implementation",
-            "Mobile apps",
-            "CMS implementation",
-            "Web animations",
+            skillsTranslation("development.web"),
+            skillsTranslation("development.commerce"),
+            skillsTranslation("development.mobile"),
+            skillsTranslation("development.cms"),
+            skillsTranslation("development.animation"),
           ]}
           displayStyle={{ scale: devScaleIn, opacity: devFadeIn }}
           tagStyle={{ scale: devTagScaleIn, opacity: devTagFadeIn }}

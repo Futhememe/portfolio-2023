@@ -12,6 +12,7 @@ import { useInView, motion } from "framer-motion";
 import { SlideInState, slideIn } from "@/utils/animations/slideIn";
 import { Body } from "@/layout/body";
 import Head from "next/head";
+import { useTranslation } from "react-i18next";
 
 const workExperiences = [
   {
@@ -46,10 +47,18 @@ export default function About() {
     requestAnimationFrame(raf);
   }, []);
 
+  const { t: aboutTranslation } = useTranslation("config", {
+    keyPrefix: "about",
+  });
+
+  const { t: genericTranslation } = useTranslation("config", {
+    keyPrefix: "generic",
+  });
+
   return (
     <Body>
       <Head>
-        <title>Gustavo Souza | About</title>
+        <title>Gustavo Souza | {genericTranslation("about")}</title>
       </Head>
       <div
         ref={aboutRef}
@@ -95,7 +104,7 @@ export default function About() {
                 fontWeight: [500, 400],
               }}
             >
-              Know me better
+              {aboutTranslation("know_me")}
             </Display>
           </motion.div>
           <div
@@ -142,16 +151,7 @@ export default function About() {
             <Text
               css={{ fontSize: "1rem", fontWeight: 401, textAlign: "justify" }}
             >
-              Hey, my name is Gustavo. I&apos;m a creative developer and
-              designer living in Brazil with a dream of always helping people,
-              whether it&apos;s with a website for their business, helping you
-              understand technology, or simply assisting you in crossing the
-              street. We are human beings, and we were made to help one another,
-              and that&apos;s my passion, helping. I&apos;m a designer who loves
-              bringing life to my creations, be it art or a website. Well, I
-              love developing solutions even for the simplest ideas, and when
-              I&apos;m not creating anything, you can find me cooking, drawing,
-              or simply looking for new things to learn.
+              {aboutTranslation("complete_resume")}
             </Text>
             <Text
               css={{
@@ -159,7 +159,7 @@ export default function About() {
                 fontWeight: 501,
               }}
             >
-              scroll for more
+              {genericTranslation("scroll")}
             </Text>
           </motion.div>
         </div>
@@ -184,7 +184,7 @@ export default function About() {
           <Display
             css={{ fontSize: "2.5rem", fontWeight: 700, lineHeight: "tight" }}
           >
-            Work experience
+            {aboutTranslation("experience")}
           </Display>
         </motion.div>
         <div

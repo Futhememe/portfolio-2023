@@ -3,6 +3,7 @@ import { motion, useInView } from "framer-motion";
 import { Display, Text } from "../Typograph";
 import { useRef } from "react";
 import { SlideInState, slideIn } from "@/utils/animations/slideIn";
+import { useTranslation } from "react-i18next";
 
 export const Hero = () => {
   const firstLineRef = useRef(null);
@@ -13,6 +14,14 @@ export const Hero = () => {
 
   const thirdLineRef = useRef(null);
   const isThirdLineInView = useInView(thirdLineRef, { once: true });
+
+  const { t: heroTranslation } = useTranslation("config", {
+    keyPrefix: "hero",
+  });
+
+  const { t: genericTranslation } = useTranslation("config", {
+    keyPrefix: "generic",
+  });
 
   return (
     <div
@@ -48,7 +57,8 @@ export const Hero = () => {
           transition={{ delay: 0.2 }}
         >
           <Display css={{ fontSize: ["2.5rem", "4rem"], lineHeight: "tight" }}>
-            Hello, {"I'm"} <b className={css({ fontWeight: 500 })}>Gustavo</b>
+            {heroTranslation("hello")}{" "}
+            <b className={css({ fontWeight: 500 })}>Gustavo</b>
           </Display>
         </motion.div>
         <motion.div
@@ -61,7 +71,7 @@ export const Hero = () => {
           transition={{ delay: 0.6 }}
         >
           <Display css={{ fontSize: ["2.5rem", "4rem"], lineHeight: "tight" }}>
-            a creative designer
+            {heroTranslation("designer")}
           </Display>
         </motion.div>
         <motion.div
@@ -74,7 +84,7 @@ export const Hero = () => {
           transition={{ delay: 1 }}
         >
           <Display css={{ fontSize: ["2.5rem", "4rem"], lineHeight: "tight" }}>
-            and developer
+            {heroTranslation("developer")}
           </Display>
         </motion.div>
       </div>
@@ -95,7 +105,7 @@ export const Hero = () => {
             fontWeight: 501,
           }}
         >
-          scroll for more
+          {genericTranslation("scroll")}
         </Text>
       </motion.div>
     </div>

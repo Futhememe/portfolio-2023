@@ -4,12 +4,17 @@ import { Display } from "@/components/Typograph";
 import { Body } from "@/layout/body";
 import { css } from "@/styled-system/css";
 import Head from "next/head";
+import { useTranslation } from "react-i18next";
 
 export default function Showcase() {
+  const { t: workTranslation } = useTranslation("config", {
+    keyPrefix: "work",
+  });
+
   return (
     <Body>
       <Head>
-        <title>Gustavo Souza | Showcase</title>
+        <title>Gustavo Souza | {workTranslation("showcase")}</title>
       </Head>
       <div
         className={css({
@@ -23,8 +28,10 @@ export default function Showcase() {
           position: "relative",
         })}
       >
-        <Display css={{ fontSize: ["5rem", "6rem"] }}>Showcase</Display>
-        <SkillTag>🚧 work in progress come here again in a few days</SkillTag>
+        <Display css={{ fontSize: ["5rem", "6rem"] }}>
+          {workTranslation("showcase")}
+        </Display>
+        <SkillTag>🚧 {workTranslation("in_progress")}</SkillTag>
       </div>
     </Body>
   );

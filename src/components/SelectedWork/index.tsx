@@ -1,12 +1,12 @@
 import { css } from "@/styled-system/css";
 import { Display } from "../Typograph";
-import { ProjectResume } from "../ProjectResume";
-import { LinkButton } from "../LinkButton";
-import { useTrailerMouse } from "@/hooks/useTrailerMouse";
 import { SkillTag } from "../SkillSet/styles";
+import { useTranslation } from "react-i18next";
 
 export const SelectedWork = () => {
-  const { linkEnter, mouseLeave } = useTrailerMouse();
+  const { t: workTranslation } = useTranslation("config", {
+    keyPrefix: "work",
+  });
 
   return (
     <div
@@ -25,7 +25,7 @@ export const SelectedWork = () => {
           px: ["0", "5rem"],
         }}
       >
-        Selected work
+        {workTranslation("title")}
       </Display>
       {/* <div
         className={css({
@@ -42,7 +42,7 @@ export const SelectedWork = () => {
         <LinkButton>view more here</LinkButton>
       </div> */}
       <div>
-        <SkillTag>🚧 work in progress come here again in a few days</SkillTag>
+        <SkillTag>🚧 {workTranslation("in_progress")}</SkillTag>
       </div>
     </div>
   );
