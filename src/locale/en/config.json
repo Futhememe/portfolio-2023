@@ -1,0 +1,73 @@
+{
+  "generic": {
+    "scroll": "scroll for more",
+    "about_me": "About me",
+    "view_more": "view more here",
+    "let": "Let's",
+    "work": "work",
+    "together": "together",
+    "hi": "Say hi",
+    "chat": "Let's chat",
+    "share": "Share your ideas",
+    "get_in_touch": "get in touch",
+    "home": "Home",
+    "about": "About",
+    "projects": "Projects",
+    "contact": "Contact",
+    "created_by": "Created by",
+    "send": "Send"
+  },
+  "hero": {
+    "hello": "Hello, I'm ",
+    "designer": "a creative designer",
+    "developer": "and developer"
+  },
+  "about": {
+    "know_me": "Know me better",
+    "resume": "Hey, my name is Gustavo. I'm a creative developer and designer living in Brazil with a dream of always helping people, whether it's with a website for their business, helping you understand technology, or simply assisting you in crossing the street.",
+    "complete_resume": "Hey, my name is Gustavo. I'm a creative developer and designer living in Brazil with a dream of always helping people, whether it's with a website for their business, helping you understand technology, or simply assisting you in crossing the street. We are human beings, and we were made to help one another, and that's my passion, helping. I'm a designer who loves bringing life to my creations, be it art or a website. Well, I love developing solutions even for the simplest ideas, and when I'm not creating anything, you can find me cooking, drawing, or simply looking for new things to learn.",
+    "experience": "Work experience"
+  },
+  "skills": {
+    "title": "What I do ?",
+    "product": {
+      "title": "Product discovery",
+      "user_flow": "User flows",
+      "func": "Funcionalities analysis",
+      "research": "Visual research",
+      "site_arc": "Site architecture",
+      "wireframe": "Wireframe"
+    },
+    "design": {
+      "title": "Design",
+      "web": "Web design",
+      "design_system": "Design system",
+      "mobile": "Mobile apps",
+      "animation": "Animations",
+      "prototyping": "Prototyping"
+    },
+    "development": {
+      "title": "Development",
+      "web": "Web development",
+      "commerce": "E-commerce implementation",
+      "mobile": "Mobile apps",
+      "cms": "CMS implementation",
+      "animation": "Web animations"
+    }
+  },
+  "work": {
+    "title": "Selected work",
+    "in_progress": "work in progress come here again in a few days",
+    "showcase": "Showcase"
+  },
+  "contact": {
+    "name": "What's your name ?",
+    "email": "What's your email ?",
+    "phone": "What's your phone number ?",
+    "project": "Tell me more about your project",
+    "name_placeholder": "Your name",
+    "email_placeholder": "Your email",
+    "phone_placeholder": "Your phone number",
+    "project_placeholder": "Describe it as you can"
+  }
+}

@@ -1,0 +1,73 @@
+{
+  "generic": {
+    "scroll": "arraste para mais",
+    "about_me": "Sobre mim",
+    "view_more": "ver mais aqui",
+    "let": "Vamos",
+    "work": "trabalhar",
+    "together": "juntos",
+    "hi": "Oi",
+    "chat": "Vamos conversar",
+    "share": "Compartilhe suas ideias",
+    "get_in_touch": "entre em contato",
+    "home": "Início",
+    "about": "Sobre",
+    "projects": "Projetos",
+    "contact": "Contato",
+    "created_by": "Criado por",
+    "send": "Enviar"
+  },
+  "hero": {
+    "hello": "Olá, eu sou ",
+    "designer": "um designer criativo",
+    "developer": "e desenvolvedor"
+  },
+  "about": {
+    "know_me": "Quem sou eu ?",
+    "resume": "Oi, meu nome é Gustavo. Sou um desenvolvedor criativo e designer que mora no Brasil com o sonho de sempre ajudar as pessoas, seja com um site para seus negócios, ajudando você a entender tecnologia ou simplesmente auxiliando-o a atravessar a rua.",
+    "complete_resume": "Oi, meu nome é Gustavo. Sou um desenvolvedor criativo e designer que mora no Brasil com o sonho de sempre ajudar as pessoas, seja com um site para seus negócios, ajudando você a entender tecnologia ou simplesmente auxiliando-o a atravessar a rua. Somos seres humanos e fomos feitos para nos ajudarmos mutuamente, e essa é minha paixão, ajudar. Sou um designer que adora dar vida às minhas criações, seja arte ou um site. Bem, adoro desenvolver soluções até para as ideias mais simples, e quando não estou criando nada, você pode me encontrar cozinhando, desenhando ou simplesmente procurando novas coisas para aprender.",
+    "experience": "Experiência de trabalho"
+  },
+  "skills": {
+    "title": "O que eu faço?",
+    "product": {
+      "title": "Descoberta de produto",
+      "user_flow": "Fluxos de usuário",
+      "func": "Análise de funcionalidades",
+      "research": "Pesquisa visual",
+      "site_arc": "Arquitetura do site",
+      "wireframe": "Wireframe"
+    },
+    "design": {
+      "title": "Design",
+      "web": "Design de web",
+      "design_system": "Sistema de design",
+      "mobile": "Aplicativos móveis",
+      "animation": "Animações",
+      "prototyping": "Prototipagem"
+    },
+    "development": {
+      "title": "Desenvolvimento",
+      "web": "Desenvolvimento web",
+      "commerce": "Implementação de e-commerce",
+      "mobile": "Aplicativos móveis",
+      "cms": "Implementação de CMS",
+      "animation": "Animações web"
+    }
+  },
+  "work": {
+    "title": "Projetos",
+    "in_progress": "Trabalhos em andamento. Volte novamente em alguns dias.",
+    "showcase": "Projetos"
+  },
+  "contact": {
+    "name": "Qual é o seu nome?",
+    "email": "Qual é o seu e-mail?",
+    "phone": "Qual é o seu número de telefone?",
+    "project": "Conte-me mais sobre o seu projeto",
+    "name_placeholder": "Seu nome",
+    "email_placeholder": "Seu e-mail",
+    "phone_placeholder": "Seu número de telefone",
+    "project_placeholder": "Descreva o melhor que puder"
+  }
+}
