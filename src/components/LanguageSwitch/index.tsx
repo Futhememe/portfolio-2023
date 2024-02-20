@@ -1,10 +1,9 @@
-import * as Switch from "@radix-ui/react-switch";
-import { Root } from "./styles";
+import { Root, Thumb } from "./styles";
 
 export const LanguageSwitch = () => {
   return (
     <Root>
-      <Switch.Thumb />
+      <Thumb />
     </Root>
   );
 };
