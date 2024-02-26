@@ -15,7 +15,9 @@
     "projects": "Projects",
     "contact": "Contact",
     "created_by": "Created by",
-    "send": "Send"
+    "send": "Send",
+    "english": "English",
+    "portuguese": "Portuguese"
   },
   "hero": {
     "hello": "Hello, I'm ",

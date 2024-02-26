@@ -15,7 +15,9 @@
     "projects": "Projetos",
     "contact": "Contato",
     "created_by": "Criado por",
-    "send": "Enviar"
+    "send": "Enviar",
+    "english": "Inglês",
+    "portuguese": "Português"
   },
   "hero": {
     "hello": "Olá, eu sou ",
