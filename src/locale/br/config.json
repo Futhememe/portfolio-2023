@@ -21,13 +21,13 @@
   },
   "hero": {
     "hello": "Olá, eu sou ",
-    "designer": "um designer criativo",
-    "developer": "e desenvolvedor"
+    "designer": "desenvolvedor e designer",
+    "developer": "criativo"
   },
   "about": {
     "know_me": "Quem sou eu ?",
-    "resume": "Oi, meu nome é Gustavo. Sou um desenvolvedor criativo e designer que mora no Brasil com o sonho de sempre ajudar as pessoas, seja com um site para seus negócios, ajudando você a entender tecnologia ou simplesmente auxiliando-o a atravessar a rua.",
-    "complete_resume": "Oi, meu nome é Gustavo. Sou um desenvolvedor criativo e designer que mora no Brasil com o sonho de sempre ajudar as pessoas, seja com um site para seus negócios, ajudando você a entender tecnologia ou simplesmente auxiliando-o a atravessar a rua. Somos seres humanos e fomos feitos para nos ajudarmos mutuamente, e essa é minha paixão, ajudar. Sou um designer que adora dar vida às minhas criações, seja arte ou um site. Bem, adoro desenvolver soluções até para as ideias mais simples, e quando não estou criando nada, você pode me encontrar cozinhando, desenhando ou simplesmente procurando novas coisas para aprender.",
+    "resume": "Um desenvolvedor e designer criativo morando no Brasil - SP, com mais de 5 anos de experiência com desenvolvimento de software multiplataforma.",
+    "complete_resume": "Olá meu nome é Gustavo, sou um desenvolvedor e designer criativo, com mais de 5 anos de experiência com desenvolvimento de software multiplataforma. Amo conhecer novas histórias e novas ideias, cada projeto é uma ideia e cada ideia é uma história pronta para ser contada para o mundo e esse é meu trabalho, escutar suas histórias e te ajudar a espalha-la pelo mundo. No meu tempo livre amo ler, assistir séries novas e criar ferramentas novas para me ajudar",
     "experience": "Experiência de trabalho"
   },
   "skills": {
