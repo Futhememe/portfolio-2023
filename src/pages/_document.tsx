@@ -9,7 +9,19 @@ export default function Document() {
         padding: 0,
         overflowX: "hidden",
         overflowY: "scroll",
-        scrollbar: "hidden",
+
+        _scrollbar: {
+          width: "6px",
+          background: "background",
+        },
+        _scrollbarThumb: {
+          width: "6px",
+          background: "darkbackground",
+        },
+        _scrollbarTrack: {
+          width: "6px",
+          background: "background",
+        },
       })}
       lang="en"
     >
@@ -24,10 +36,8 @@ export default function Document() {
           content="Hello, I'm Gustavo an creative designer and developer"
         />
       </Head>
-      <body>
-        <Main />
-        <NextScript />
-      </body>
+      <Main />
+      <NextScript />
     </Html>
   );
 }
